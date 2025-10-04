@@ -1,7 +1,7 @@
 # README
 
 ## ER図
-* https://gyazo.com/d0ae20085dbbc604c2730c3ee5ad6560
+* https://gyazo.com/bd22cc0a62f196fa7aaa326d7acb093a
 
 ## サービス概要
 リアルタイム性とソーシャル機能を重視したブログプラットフォームです。
