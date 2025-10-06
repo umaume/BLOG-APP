@@ -14,12 +14,12 @@
     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
 
     <!-- Favicon and App Icons -->
-    <link rel="icon" href="/murmur_image.png" type="image/png">
-    <link rel="icon" href="/murmur_image.svg" type="image/svg+xml">
-    <link rel="apple-touch-icon" href="/murmur_image.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="/murmur_image.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/murmur_image.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/murmur_image.png">
+    <%= favicon_link_tag "murmur_image.png", type: "image/png" %>
+    <%= favicon_link_tag "murmur_image.svg", type: "image/svg+xml" %>
+    <%= favicon_link_tag "murmur_image.png", rel: "apple-touch-icon" %>
+    <%= favicon_link_tag "murmur_image.png", rel: "apple-touch-icon", sizes: "180x180" %>
+    <%= favicon_link_tag "murmur_image.png", type: "image/png", sizes: "32x32" %>
+    <%= favicon_link_tag "murmur_image.png", type: "image/png", sizes: "16x16" %>
     
     <!-- PWA Meta Tags -->
     <meta name="theme-color" content="#3B82F6">
@@ -38,7 +38,7 @@
         <div class="flex justify-between items-center py-4">
           <!-- Logo -->
           <%= link_to root_path, class: "flex items-center space-x-2 text-xl font-bold text-gray-900" do %>
-            <%= image_tag "/murmur_image.svg", alt: "Murmur Logo", class: "w-8 h-8" %>
+            <%= image_tag "murmur_image.svg", alt: "Murmur Logo", class: "w-8 h-8" %>
             <span>Murmur</span>
           <% end %>
           
