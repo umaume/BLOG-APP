@@ -13583,3 +13583,890 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 430ms (Views: 293.7ms | ActiveRecord: 7.7ms (49 queries, 1 cached) | GC: 11.1ms)
 
 
+Started GET "/posts" for 172.20.0.1 at 2025-10-06 05:14:05 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "post_tags"."tag_id" = "tags"."id" INNER JOIN "posts" ON "posts"."id" = "post_tags"."post_id" GROUP BY "tags"."id" ORDER BY COUNT(posts.id) DESC LIMIT 10 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:33
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."published" = 1 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:67
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."published" = 1 ORDER BY "posts"."created_at" DESC /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (6, 5, 4, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mLike Load (0.1ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" IN (14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1, 2) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mPostTag Load (0.0ms)[0m  [1m[34mSELECT "post_tags".* FROM "post_tags" WHERE "post_tags"."post_id" IN (14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" IN (2, 1, 5, 6, 3, 8, 9, 4, 7) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 14 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 14 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 4.8ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 14 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 13 LIMIT 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:116
+  [1m[36mTag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 13 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:121
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 13 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 13 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 13 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 12 LIMIT 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:116
+  [1m[36mTag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 12 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:121
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 12 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 12 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 12 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 11 LIMIT 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:116
+  [1m[36mTag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 11 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:121
+  [1m[36mCACHE Tag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 11[0m
+  ↳ app/views/posts/index.html.erb:122
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 11 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 11 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 11 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 5 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 5.3ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 10 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 10 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 10 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 5 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 9 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 9 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 9 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 4 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 8 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 8 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 8 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 4 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 7 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 7 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 7 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 3 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.8ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 6 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 6 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 6 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 5 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 5 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 5 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 2 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 3 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 1 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 1 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 2 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 2 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 2 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 1 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  Rendered posts/index.html.erb within layouts/application (Duration: 119.4ms | GC: 8.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 122.5ms | GC: 8.0ms)
+Completed 500 Internal Server Error in 210ms (ActiveRecord: 4.5ms (72 queries, 5 cached) | GC: 9.0ms)
+
+
+  
+ActionView::Template::Error (The asset 'murmur_image.png' was not found in the load path.)
+Caused by: Propshaft::MissingAssetError (The asset 'murmur_image.png' was not found in the load path.)
+
+Information for: ActionView::Template::Error (The asset 'murmur_image.png' was not found in the load path.):
+    14:     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+    15: 
+    16:     <!-- Favicon and App Icons -->
+    17:     <%= favicon_link_tag "murmur_image.png", type: "image/png" %>
+    18:     <%= favicon_link_tag "murmur_image.svg", type: "image/svg+xml" %>
+    19:     <%= favicon_link_tag "murmur_image.png", rel: "apple-touch-icon" %>
+    20:     <%= favicon_link_tag "murmur_image.png", rel: "apple-touch-icon", sizes: "180x180" %>
+  
+app/views/layouts/application.html.erb:17
+
+Information for cause: Propshaft::MissingAssetError (The asset 'murmur_image.png' was not found in the load path.):
+  
+app/views/layouts/application.html.erb:17
+Started GET "/posts" for 172.20.0.1 at 2025-10-06 05:14:07 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "post_tags"."tag_id" = "tags"."id" INNER JOIN "posts" ON "posts"."id" = "post_tags"."post_id" GROUP BY "tags"."id" ORDER BY COUNT(posts.id) DESC LIMIT 10 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:33
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."published" = 1 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:67
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."published" = 1 ORDER BY "posts"."created_at" DESC /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (6, 5, 4, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" IN (14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1, 2) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mPostTag Load (0.0ms)[0m  [1m[34mSELECT "post_tags".* FROM "post_tags" WHERE "post_tags"."post_id" IN (14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" IN (2, 1, 5, 6, 3, 8, 9, 4, 7) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 14 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 14 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.3ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 14 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 13 LIMIT 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:116
+  [1m[36mTag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 13 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:121
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 13 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 13 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 13 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 12 LIMIT 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:116
+  [1m[36mTag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 12 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:121
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 12 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 12 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 12 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 11 LIMIT 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:116
+  [1m[36mTag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 11 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:121
+  [1m[36mCACHE Tag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 11[0m
+  ↳ app/views/posts/index.html.erb:122
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 11 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 11 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 11 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 5 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 10 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 10 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 10 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 5 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 9 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 9 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 9 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 4 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 8 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 8 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 8 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 4 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 7 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 7 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 7 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 3 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 6 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 6 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 6 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 5 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 5 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 5 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 2 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 3 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 1 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 1 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 2 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 2 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 2 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 1 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  Rendered posts/index.html.erb within layouts/application (Duration: 50.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 50.9ms | GC: 0.0ms)
+Completed 500 Internal Server Error in 127ms (ActiveRecord: 1.3ms (72 queries, 5 cached) | GC: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset 'murmur_image.png' was not found in the load path.)
+Caused by: Propshaft::MissingAssetError (The asset 'murmur_image.png' was not found in the load path.)
+
+Information for: ActionView::Template::Error (The asset 'murmur_image.png' was not found in the load path.):
+    14:     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+    15: 
+    16:     <!-- Favicon and App Icons -->
+    17:     <%= favicon_link_tag "murmur_image.png", type: "image/png" %>
+    18:     <%= favicon_link_tag "murmur_image.svg", type: "image/svg+xml" %>
+    19:     <%= favicon_link_tag "murmur_image.png", rel: "apple-touch-icon" %>
+    20:     <%= favicon_link_tag "murmur_image.png", rel: "apple-touch-icon", sizes: "180x180" %>
+  
+app/views/layouts/application.html.erb:17
+
+Information for cause: Propshaft::MissingAssetError (The asset 'murmur_image.png' was not found in the load path.):
+  
+app/views/layouts/application.html.erb:17
+Started GET "/favicon.ico" for 172.20.0.1 at 2025-10-06 05:14:08 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/posts" for 172.20.0.1 at 2025-10-06 05:14:09 +0000
+Cannot render console from 172.20.0.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "post_tags"."tag_id" = "tags"."id" INNER JOIN "posts" ON "posts"."id" = "post_tags"."post_id" GROUP BY "tags"."id" ORDER BY COUNT(posts.id) DESC LIMIT 10 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:33
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."published" = 1 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:67
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."published" = 1 ORDER BY "posts"."created_at" DESC /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (6, 5, 4, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" IN (14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mCategory Load (0.0ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1, 2) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mPostTag Load (0.0ms)[0m  [1m[34mSELECT "post_tags".* FROM "post_tags" WHERE "post_tags"."post_id" IN (14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" IN (2, 1, 5, 6, 3, 8, 9, 4, 7) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 14 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 14 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 14 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 13 LIMIT 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:116
+  [1m[36mTag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 13 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:121
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 13 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 13 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.8ms | GC: 0.3ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 13 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 12 LIMIT 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:116
+  [1m[36mTag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 12 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:121
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 12 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 12 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 12 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 11 LIMIT 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:116
+  [1m[36mTag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 11 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:121
+  [1m[36mCACHE Tag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 11[0m
+  ↳ app/views/posts/index.html.erb:122
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 11 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 11 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 11 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 5 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 1.5ms | GC: 0.5ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 10 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 10 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 10 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 5 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 9 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 9 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 9 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 4 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 8 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 8 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 8 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 4 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 7 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 7 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.5ms | GC: 0.5ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 7 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 3 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 6 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 6 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 6 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 5 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 5 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.2ms | GC: 0.2ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 5 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 2 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 3 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 1 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 1 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 2 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 2 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.9ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 2 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 1 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.4ms | GC: 0.4ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  Rendered posts/index.html.erb within layouts/application (Duration: 52.7ms | GC: 5.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 53.3ms | GC: 5.0ms)
+Completed 500 Internal Server Error in 129ms (ActiveRecord: 1.8ms (72 queries, 5 cached) | GC: 5.0ms)
+
+
+  
+ActionView::Template::Error (The asset 'murmur_image.png' was not found in the load path.)
+Caused by: Propshaft::MissingAssetError (The asset 'murmur_image.png' was not found in the load path.)
+
+Information for: ActionView::Template::Error (The asset 'murmur_image.png' was not found in the load path.):
+    14:     <%#= tag.link rel: "manifest", href: pwa_manifest_path(format: :json) %>
+    15: 
+    16:     <!-- Favicon and App Icons -->
+    17:     <%= favicon_link_tag "murmur_image.png", type: "image/png" %>
+    18:     <%= favicon_link_tag "murmur_image.svg", type: "image/svg+xml" %>
+    19:     <%= favicon_link_tag "murmur_image.png", rel: "apple-touch-icon" %>
+    20:     <%= favicon_link_tag "murmur_image.png", rel: "apple-touch-icon", sizes: "180x180" %>
+  
+app/views/layouts/application.html.erb:17
+
+Information for cause: Propshaft::MissingAssetError (The asset 'murmur_image.png' was not found in the load path.):
+  
+app/views/layouts/application.html.erb:17
+Started GET "/posts" for ::1 at 2025-10-06 14:27:43 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='BlogAppRails'*/[0m
+Processing by PostsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = 6 ORDER BY "users"."id" ASC LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:8
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mTag Load (0.2ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "post_tags"."tag_id" = "tags"."id" INNER JOIN "posts" ON "posts"."id" = "post_tags"."post_id" GROUP BY "tags"."id" ORDER BY COUNT(posts.id) DESC LIMIT 10 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:33
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."published" = 1 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:67
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."published" = 1 ORDER BY "posts"."created_at" DESC /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (6, 5, 4, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mLike Load (0.4ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" IN (14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1, 2) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mPostTag Load (0.0ms)[0m  [1m[34mSELECT "post_tags".* FROM "post_tags" WHERE "post_tags"."post_id" IN (14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" IN (2, 1, 5, 6, 3, 8, 9, 4, 7) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 14 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 14 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 11.4ms | GC: 0.0ms)
+  [1m[36mComment Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 14 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 13 LIMIT 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:116
+  [1m[36mTag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 13 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:121
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 13 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 13 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 2.3ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 13 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 12 LIMIT 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:116
+  [1m[36mTag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 12 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:121
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 12 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 12 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.0ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 12 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 11 LIMIT 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:116
+  [1m[36mTag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 11 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:121
+  [1m[36mCACHE Tag Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 11[0m
+  ↳ app/views/posts/index.html.erb:122
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 11 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 11 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 10.7ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 11 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 5 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 15.0ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 10 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 10 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 1.7ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 10 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 5 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 1.2ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 9 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 9 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 9 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 4 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 8 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 8 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 8 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 4 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 7 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 7 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 7 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 3 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 6 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 6 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 6 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 3 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.6ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 5 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 5 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.7ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 5 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 2 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 3 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 1 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 1 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 2 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 2 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 2 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mCACHE User Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" INNER JOIN "follows" ON "users"."id" = "follows"."following_id" WHERE "follows"."follower_id" = 6 AND "users"."id" = 1 LIMIT 1[0m
+  ↳ app/models/user.rb:47:in 'User#following?'
+  Rendered shared/_follow_button.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mLike Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "likes" WHERE "likes"."post_id" = 1 AND "likes"."user_id" = 6 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/models/post.rb:47:in 'Post#liked_by?'
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:29
+  Rendered posts/_like_button.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  Rendered posts/index.html.erb within layouts/application (Duration: 269.5ms | GC: 0.0ms)
+  [1m[36mCACHE ActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1[0m
+  ↳ app/views/layouts/application.html.erb:71
+  Rendered layout layouts/application.html.erb (Duration: 280.0ms | GC: 0.0ms)
+Completed 200 OK in 449ms (Views: 276.2ms | ActiveRecord: 8.3ms (73 queries, 6 cached) | GC: 31.7ms)
+
+
+Started GET "/assets/tailwind-da0d02de.css" for ::1 at 2025-10-06 14:27:43 +0900
+Started GET "/?id=4554ad74-b996-42e4-b7d1-dfa26458ded8&vscodeBrowserReqId=1759728473106" for ::1 at 2025-10-06 14:27:53 +0900
+Processing by PostsController#index as HTML
+  Parameters: {"id" => "4554ad74-b996-42e4-b7d1-dfa26458ded8", "vscodeBrowserReqId" => "1759728473106"}
+  Rendering layout layouts/application.html.erb
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mCategory Load (0.2ms)[0m  [1m[34mSELECT "categories".* FROM "categories" ORDER BY "categories"."name" ASC /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:26
+  [1m[36mTag Load (0.1ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "post_tags"."tag_id" = "tags"."id" INNER JOIN "posts" ON "posts"."id" = "post_tags"."post_id" GROUP BY "tags"."id" ORDER BY COUNT(posts.id) DESC LIMIT 10 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:33
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."published" = 1 LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:67
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."published" = 1 ORDER BY "posts"."created_at" DESC /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" IN (6, 5, 4, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mLike Load (0.0ms)[0m  [1m[34mSELECT "likes".* FROM "likes" WHERE "likes"."post_id" IN (14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" IN (14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mCategory Load (0.1ms)[0m  [1m[34mSELECT "categories".* FROM "categories" WHERE "categories"."id" IN (1, 2) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mPostTag Load (0.1ms)[0m  [1m[34mSELECT "post_tags".* FROM "post_tags" WHERE "post_tags"."post_id" IN (14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 3, 2, 1) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" WHERE "tags"."id" IN (2, 1, 5, 6, 3, 8, 9, 4, 7) /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:68
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 6 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 14 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:39
+  Rendered posts/_like_button.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 14 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 13 LIMIT 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:116
+  [1m[36mTag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 13 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:121
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 13 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:39
+  Rendered posts/_like_button.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 13 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 12 LIMIT 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:116
+  [1m[36mTag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 12 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:121
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 12 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:39
+  Rendered posts/_like_button.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 12 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mTag Load (0.0ms)[0m  [1m[34mSELECT "tags".* FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 11 LIMIT 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:116
+  [1m[36mTag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 11 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:121
+  [1m[36mCACHE Tag Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "tags" INNER JOIN "post_tags" ON "tags"."id" = "post_tags"."tag_id" WHERE "post_tags"."post_id" = 11[0m
+  ↳ app/views/posts/index.html.erb:122
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 11 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:39
+  Rendered posts/_like_button.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 11 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 5 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 10 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:39
+  Rendered posts/_like_button.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 10 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 9 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:39
+  Rendered posts/_like_button.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 9 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 4 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 8 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:39
+  Rendered posts/_like_button.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 8 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 7 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:39
+  Rendered posts/_like_button.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 7 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 3 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 6 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:39
+  Rendered posts/_like_button.html.erb (Duration: 1.5ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 6 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 5 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:39
+  Rendered posts/_like_button.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 5 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 2 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:39
+  Rendered posts/_like_button.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 3 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mActiveStorage::Attachment Load (0.0ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = 1 AND "active_storage_attachments"."record_type" = 'User' AND "active_storage_attachments"."name" = 'avatar' LIMIT 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:73
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 2 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:39
+  Rendered posts/_like_button.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 2 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  [1m[36mLike Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "likes" WHERE "likes"."post_id" = 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/_like_button.html.erb:39
+  Rendered posts/_like_button.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments" WHERE "comments"."post_id" = 1 /*action='index',application='BlogAppRails',controller='posts'*/[0m
+  ↳ app/views/posts/index.html.erb:143
+  Rendered posts/index.html.erb within layouts/application (Duration: 49.4ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 50.7ms | GC: 0.0ms)
+Completed 200 OK in 71ms (Views: 50.1ms | ActiveRecord: 1.2ms (49 queries, 1 cached) | GC: 0.0ms)
+
+
