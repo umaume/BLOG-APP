@@ -6,6 +6,10 @@ RSpec.describe CommentsController, type: :controller do
   let(:post_record) { create(:post) }
   let(:comment) { create(:comment, user: user, post: post_record) }
 
+  before do
+    @request.env["devise.mapping"] = Devise.mappings[:user]
+  end
+
   describe 'POST #create' do
     let(:valid_attributes) do
       {
@@ -88,9 +92,9 @@ RSpec.describe CommentsController, type: :controller do
       end
 
       context 'with invalid parameters' do
-        it 'redirects to the post with errors' do
+        it 'renders unprocessable content status' do
           patch :update, params: { post_id: post_record.id, id: comment.id, comment: { body: '' } }
-          expect(response).to redirect_to(post_record)
+          expect(response).to have_http_status(:unprocessable_content)
         end
       end
     end
@@ -140,11 +144,13 @@ RSpec.describe CommentsController, type: :controller do
       before { sign_in other_user }
 
       it 'redirects to the post' do
+        comment # create the comment first
         delete :destroy, params: { post_id: post_record.id, id: comment.id }
         expect(response).to redirect_to(post_record)
       end
 
       it 'does not destroy the comment' do
+        comment # create the comment first
         expect {
           delete :destroy, params: { post_id: post_record.id, id: comment.id }
         }.to_not change(Comment, :count)

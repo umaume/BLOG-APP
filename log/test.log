@@ -3433,3 +3433,987 @@ Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.2ms (14 queries, 1 cache
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
   [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (2.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 1"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:27.957071"], ["updated_at", "2025-10-06 03:54:27.957071"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 2"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:27.965237"], ["updated_at", "2025-10-06 03:54:27.965237"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 3"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:27.969518"], ["updated_at", "2025-10-06 03:54:27.969518"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 4"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:27.972768"], ["updated_at", "2025-10-06 03:54:27.972768"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 5"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:27.975381"], ["updated_at", "2025-10-06 03:54:27.975381"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 6"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:28.083966"], ["updated_at", "2025-10-06 03:54:28.083966"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 1"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 1"], ["description", nil], ["color", "#d8b1b1"], ["created_at", "2025-10-06 03:54:28.091407"], ["updated_at", "2025-10-06 03:54:28.091407"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "誤用騎兵ごふくちかくたいりく。"], ["content", "傑作品詞しょうかする。しあとるし部首あらあらしい。普及せいじょうかいたく。\n\nつまるせいしん馬鹿馬鹿しい。書き方こいぬ面。けしきフランス語出かける。\n\n都合察知めいしょ。かんじるつぎつぎすいせん。難しいきょうかい遮断。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:28.096774"], ["updated_at", "2025-10-06 03:54:28.096774"], ["user_id", 1], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#create as HTML
+  Parameters: {"comment" => {"body" => "This is a test comment that should be long enough to pass validation."}, "post_id" => "1"}
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 7"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:28.138109"], ["updated_at", "2025-10-06 03:54:28.138109"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 8"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:28.143663"], ["updated_at", "2025-10-06 03:54:28.143663"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 2"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 2"], ["description", nil], ["color", "#0e1b1b"], ["created_at", "2025-10-06 03:54:28.144778"], ["updated_at", "2025-10-06 03:54:28.144778"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.7ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "米国壮年避ける部首助手。"], ["content", "総括たいこうする喜劇。下着せんりゅう電話。きんく仕事かくじっけん。\n\nやさいしょうじょうあれる。没落ちょさくけん上手。魔法あらそう店。\n\nひんかく鈍器おんとう。白菊うえるかちゅう。狂う施行気持ちいい。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:28.148829"], ["updated_at", "2025-10-06 03:54:28.148829"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 1], ["body", "あびるがんばるむぼう。米兵浅い全日本。無駄差し上げる天井。"], ["created_at", "2025-10-06 03:54:28.153920"], ["updated_at", "2025-10-06 03:54:28.153920"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => "This is an updated comment body that is long enough."}, "post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Update (0.1ms)[0m  [1m[33mUPDATE "comments" SET "body" = ?, "updated_at" = ? WHERE "comments"."id" = ?[0m  [["body", "This is an updated comment body that is long enough."], ["updated_at", "2025-10-06 03:54:28.178138"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/posts/1
+Completed 302 Found in 29ms (ActiveRecord: 0.3ms (5 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 9"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:28.190618"], ["updated_at", "2025-10-06 03:54:28.190618"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 10"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:28.198224"], ["updated_at", "2025-10-06 03:54:28.198224"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 3"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.3ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 3"], ["description", nil], ["color", "#f7f7c4"], ["created_at", "2025-10-06 03:54:28.199663"], ["updated_at", "2025-10-06 03:54:28.199663"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "原油しきもう推奨特殊あらそう。"], ["content", "ししょく間隔浮世絵。窓重い提案する。シアトルし伐採かんしん。\n\n没落ごふく胃。犠牲喜劇近視。陳列室委員靖国神社。\n\nじきしょうそうしゃくや牛乳。もうすぼうず薬。ほ見当たる境。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:28.204562"], ["updated_at", "2025-10-06 03:54:28.204562"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 1], ["body", "はなはだおりめ誘惑。むく新婚旅行きょうかい。継承金星しょくん。"], ["created_at", "2025-10-06 03:54:28.209068"], ["updated_at", "2025-10-06 03:54:28.209068"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => "This is an updated comment body that is long enough."}, "post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Update (0.6ms)[0m  [1m[33mUPDATE "comments" SET "body" = ?, "updated_at" = ? WHERE "comments"."id" = ?[0m  [["body", "This is an updated comment body that is long enough."], ["updated_at", "2025-10-06 03:54:28.218069"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/posts/1
+Completed 302 Found in 11ms (ActiveRecord: 2.7ms (5 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 11"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:28.224863"], ["updated_at", "2025-10-06 03:54:28.224863"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 12"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:28.228984"], ["updated_at", "2025-10-06 03:54:28.228984"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 4"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 4"], ["description", nil], ["color", "#4b684b"], ["created_at", "2025-10-06 03:54:28.229631"], ["updated_at", "2025-10-06 03:54:28.229631"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "大丈夫廃墟靖国神社旧姓半額。"], ["content", "消す警官丼。じゅうらい伝統絹糸。米国せっぷく華やか。\n\nじじょでんさいぼう面。きゅうりょう問題馬鹿馬鹿しい。出版備える狂う。\n\nみなとへいがい洋服。きょうかい品詞まほうつかい。浅いつばさきゅうりょう。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:28.230314"], ["updated_at", "2025-10-06 03:54:28.230314"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 1], ["body", "超〜あおい宜しく。どうけつ遺失春休み。ちかく〜系げんめつ。"], ["created_at", "2025-10-06 03:54:28.230867"], ["updated_at", "2025-10-06 03:54:28.230867"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => ""}, "post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering comments/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered comments/edit.html.erb within layouts/application (Duration: 1.2ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 2.1ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 9ms (Views: 6.9ms | ActiveRecord: 0.1ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 13"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:28.245298"], ["updated_at", "2025-10-06 03:54:28.245298"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 14"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:28.248511"], ["updated_at", "2025-10-06 03:54:28.248511"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 5"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 5"], ["description", nil], ["color", "#262669"], ["created_at", "2025-10-06 03:54:28.249526"], ["updated_at", "2025-10-06 03:54:28.249526"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "号はなはだじぞう歯を磨く奇襲。"], ["content", "ころすなんべいちえん。おどろく華やか原油。近視ほ馬。\n\n既に助手歯を磨く。人口あびる犠牲。投資きょうしつかわかす。\n\nえきびょう下着むぜい。むぜい近視哀れむ。とちょうだくりゅういく。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:28.250185"], ["updated_at", "2025-10-06 03:54:28.250185"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 15"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:28.251707"], ["updated_at", "2025-10-06 03:54:28.251707"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 3], ["body", "しょうかする特殊床。送る揺さぶるいく。浸す悲しみ誤用。"], ["created_at", "2025-10-06 03:54:28.253021"], ["updated_at", "2025-10-06 03:54:28.253021"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => "This is an updated comment body that is long enough."}, "post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://test.host/posts/1
+Filter chain halted as :check_owner rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.7ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 1"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.635029"], ["updated_at", "2025-10-06 03:54:33.635029"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 2"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.642787"], ["updated_at", "2025-10-06 03:54:33.642787"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 3"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.648659"], ["updated_at", "2025-10-06 03:54:33.648659"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 4"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.654609"], ["updated_at", "2025-10-06 03:54:33.654609"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 5"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.667199"], ["updated_at", "2025-10-06 03:54:33.667199"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 6"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.785672"], ["updated_at", "2025-10-06 03:54:33.785672"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 1"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 1"], ["description", nil], ["color", "#7b9d7b"], ["created_at", "2025-10-06 03:54:33.792887"], ["updated_at", "2025-10-06 03:54:33.792887"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "きょうどう避けるほれつあく旧姓。"], ["content", "はなじきひんしょうりゃく。にる自宅洋服。不可欠もうすあれる。\n\n普及じぞうじょうじゅん。天井きひん体重。みなもとつばさむらさきいろ。\n\nきもち品詞都合。じぎするまつりあびる。揺さぶる希望する金縛り。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:33.797740"], ["updated_at", "2025-10-06 03:54:33.797740"], ["user_id", 1], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#create as HTML
+  Parameters: {"comment" => {"body" => "This is a test comment that should be long enough to pass validation."}, "post_id" => "1"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 7"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.833016"], ["updated_at", "2025-10-06 03:54:33.833016"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 8"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.838530"], ["updated_at", "2025-10-06 03:54:33.838530"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 2"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 2"], ["description", nil], ["color", "#c0c0de"], ["created_at", "2025-10-06 03:54:33.839575"], ["updated_at", "2025-10-06 03:54:33.839575"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "きひんそだてるこうぞく血液書き方。"], ["content", "はなじ唄うもはん。号手作りかんぜん。恨みもはんかいじゅう。\n\nきんく喜劇大尉。かぜつまるたらす。金送るシアトルし。\n\n芽禍根憂い。報じるふんおどろく。休日九日電源。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:33.843020"], ["updated_at", "2025-10-06 03:54:33.843020"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 1], ["body", "米国新婚旅行味噌。丼巡回店舗。大尉全日本山葵。"], ["created_at", "2025-10-06 03:54:33.849083"], ["updated_at", "2025-10-06 03:54:33.849083"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => "This is an updated comment body that is long enough."}, "post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Update (0.1ms)[0m  [1m[33mUPDATE "comments" SET "body" = ?, "updated_at" = ? WHERE "comments"."id" = ?[0m  [["body", "This is an updated comment body that is long enough."], ["updated_at", "2025-10-06 03:54:33.872670"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/posts/1
+Completed 302 Found in 28ms (ActiveRecord: 0.4ms (5 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 9"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.885261"], ["updated_at", "2025-10-06 03:54:33.885261"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 10"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.892696"], ["updated_at", "2025-10-06 03:54:33.892696"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 3"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 3"], ["description", nil], ["color", "#056b05"], ["created_at", "2025-10-06 03:54:33.894122"], ["updated_at", "2025-10-06 03:54:33.894122"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "当て字つぎつぎじぶんえきびょうもうす。"], ["content", "自立おかね縛る。憂いちえん委員。閉めるもうす電話。\n\nきゅうりょう江戸いちだい。壮年きょうふこはん。こうぞく気持ちいい窒息。\n\n下さいはんだんする悲しみ。一文字右翼まほうつかい。ちがいきげんごお盆。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:33.898837"], ["updated_at", "2025-10-06 03:54:33.898837"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 1], ["body", "ふかさ白菊たいこうする。右翼伐採うんがいい。じっかんしゅしょう廉価。"], ["created_at", "2025-10-06 03:54:33.903572"], ["updated_at", "2025-10-06 03:54:33.903572"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => "This is an updated comment body that is long enough."}, "post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Update (0.6ms)[0m  [1m[33mUPDATE "comments" SET "body" = ?, "updated_at" = ? WHERE "comments"."id" = ?[0m  [["body", "This is an updated comment body that is long enough."], ["updated_at", "2025-10-06 03:54:33.912149"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/posts/1
+Completed 302 Found in 10ms (ActiveRecord: 2.8ms (5 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 11"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.918592"], ["updated_at", "2025-10-06 03:54:33.918592"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 12"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.922529"], ["updated_at", "2025-10-06 03:54:33.922529"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 4"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 4"], ["description", nil], ["color", "#abf8ab"], ["created_at", "2025-10-06 03:54:33.923301"], ["updated_at", "2025-10-06 03:54:33.923301"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "いたずらおかね輸出伝統出かける。"], ["content", "奇襲形殻。りゅうこうごきょうふ日没。へいがいしょうゆ原油。\n\n推奨こわす運ぶ。ゆるむしょうかするむこう。芸者じょうだん弥生。\n\nよくげつ号迷路。たくすとうき色々。撃つ羊毛〜亭。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:33.924014"], ["updated_at", "2025-10-06 03:54:33.924014"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 1], ["body", "色盲奉仕かんりょうてき。軒むこう頂く。遺失隆起底。"], ["created_at", "2025-10-06 03:54:33.924595"], ["updated_at", "2025-10-06 03:54:33.924595"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => ""}, "post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering comments/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered comments/edit.html.erb within layouts/application (Duration: 1.1ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 8ms (Views: 5.7ms | ActiveRecord: 0.1ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 13"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.936224"], ["updated_at", "2025-10-06 03:54:33.936224"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 14"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.939270"], ["updated_at", "2025-10-06 03:54:33.939270"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 5"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 5"], ["description", nil], ["color", "#250909"], ["created_at", "2025-10-06 03:54:33.940111"], ["updated_at", "2025-10-06 03:54:33.940111"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "自立禍根割り箸以下つうやく。"], ["content", "面九日塾生。はなぢおんとうひかくする。ざぜんつなひきふかさ。\n\nふんさいぼう旧姓。かんむく窓。あつかい機嫌既に。\n\n戦没ぞくごじぶん。ぞくごりゃくずみなと。やしなうだくりゅうじゅうどう。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:33.940681"], ["updated_at", "2025-10-06 03:54:33.940681"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 15"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.942069"], ["updated_at", "2025-10-06 03:54:33.942069"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 3], ["body", "下着親切減俸。ひきさく出かけるおきゃくさん。靖国神社どうけつハチのす。"], ["created_at", "2025-10-06 03:54:33.943060"], ["updated_at", "2025-10-06 03:54:33.943060"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => "This is an updated comment body that is long enough."}, "post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://test.host/posts/1
+Filter chain halted as :check_owner rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 16"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.947582"], ["updated_at", "2025-10-06 03:54:33.947582"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 17"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.948790"], ["updated_at", "2025-10-06 03:54:33.948790"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 18"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.950785"], ["updated_at", "2025-10-06 03:54:33.950785"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 6"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 6"], ["description", nil], ["color", "#f2f8f2"], ["created_at", "2025-10-06 03:54:33.951496"], ["updated_at", "2025-10-06 03:54:33.951496"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "割り箸勇気けいじばんせいじょう好き。"], ["content", "こいぬ重いしょうかする。たいこうする芸者伝統。ざぜん大仏へいがい。\n\n超音波だくりゅうほにゅうびん。はんだんするかんみさき。ふかさかわかす書き方。\n\n傑作まつせいしん。暴力いじんこうちょく。なんべいたれるおんとう。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:33.952120"], ["updated_at", "2025-10-06 03:54:33.952120"], ["user_id", 3], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 2], ["body", "避ける迷子にる。ひんきゃく輸出かんりょうてき。あつかい明治おかね。"], ["created_at", "2025-10-06 03:54:33.953347"], ["updated_at", "2025-10-06 03:54:33.953347"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => "This is an updated comment body that is long enough."}, "post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://test.host/posts/1
+Filter chain halted as :check_owner rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 19"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.958841"], ["updated_at", "2025-10-06 03:54:33.958841"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 7"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 7"], ["description", nil], ["color", "#296629"], ["created_at", "2025-10-06 03:54:33.959500"], ["updated_at", "2025-10-06 03:54:33.959500"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "果てる消す仕方がないげいひんかんとうさん。"], ["content", "こうおつひかくするせいしん。はちのす超〜気持ちいい。りゃくずふかさとうき。\n\nかんそく泳ぐいう。おんとう魔法哀れむ。ほうしゅうころすかおつき。\n\nはだかかいたく右利き。にんい電話ぶき。果樹そだてるそあく。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:33.960316"], ["updated_at", "2025-10-06 03:54:33.960316"], ["user_id", 1], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 20"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.961994"], ["updated_at", "2025-10-06 03:54:33.961994"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 2], ["body", "いくけいむしょけいかん。ようい殻合う。せんじょうざい譜面ゆるむ。"], ["created_at", "2025-10-06 03:54:33.963584"], ["updated_at", "2025-10-06 03:54:33.963584"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => "This is an updated comment body that is long enough."}, "post_id" => "1", "id" => "1"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 21"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.971931"], ["updated_at", "2025-10-06 03:54:33.971931"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 22"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.973524"], ["updated_at", "2025-10-06 03:54:33.973524"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 8"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 8"], ["description", nil], ["color", "#2a1313"], ["created_at", "2025-10-06 03:54:33.973954"], ["updated_at", "2025-10-06 03:54:33.973954"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "明治味噌やしなうねばり〜亭。"], ["content", "面積しゃくや右翼。味噌きゅうりょうあつかい。きょうふ憂いきょうはんしゃ。\n\n飽くまでも同僚右翼。終点暇警官。お盆俵特殊。\n\nだくりゅう掛ける気持ちいい。ざぜん芸者さくにゅう。かくじっけんけいけんしゃことばつき。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:33.974233"], ["updated_at", "2025-10-06 03:54:33.974233"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 1], ["body", "塾生済ますえきびょう。遮断賢明くつじょく。譜面あおい仕事。"], ["created_at", "2025-10-06 03:54:33.974578"], ["updated_at", "2025-10-06 03:54:33.974578"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mComment Count (0.2ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
+Processing by CommentsController#destroy as HTML
+  Parameters: {"post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/posts/1
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms (5 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 23"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.984742"], ["updated_at", "2025-10-06 03:54:33.984742"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 24"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.986247"], ["updated_at", "2025-10-06 03:54:33.986247"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 9"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 9"], ["description", nil], ["color", "#d7d7c6"], ["created_at", "2025-10-06 03:54:33.987117"], ["updated_at", "2025-10-06 03:54:33.987117"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "きょうしつ半額かいじゅうのきぶん。"], ["content", "みつかわかすごふく。ひんきゃくはなじ重い。超音波伝統伐採。\n\nくつじょく秘めるめいしょ。仕事量汚す。零す芽閉じる。\n\n約する報じる掛ける。桜色おどろく春休み。差し上げる不可欠おんとう。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:33.987500"], ["updated_at", "2025-10-06 03:54:33.987500"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 1], ["body", "あつかい窓かたみち。かぜ境希望する。かくじっけん老齢ハチのす。"], ["created_at", "2025-10-06 03:54:33.988213"], ["updated_at", "2025-10-06 03:54:33.988213"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#destroy as HTML
+  Parameters: {"post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/posts/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms (5 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 25"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.993486"], ["updated_at", "2025-10-06 03:54:33.993486"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 26"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:33.996594"], ["updated_at", "2025-10-06 03:54:33.996594"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 10"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 10"], ["description", nil], ["color", "#ed87ed"], ["created_at", "2025-10-06 03:54:33.998254"], ["updated_at", "2025-10-06 03:54:33.998254"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "自立きょうはんしゃ疾走かわかす失う。"], ["content", "金きょうきたいりく。無駄誓い伐採。ぞくご差し上げるこはん。\n\nげんめつ凝固きょうしつ。塾生果樹とうき。よくげつ塾生こはん。\n\nつぎつぎりゃくず浸す。高値むぼう碁。ごうけんこうせいだいどころ。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:33.998988"], ["updated_at", "2025-10-06 03:54:33.998988"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 27"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:34.000573"], ["updated_at", "2025-10-06 03:54:34.000573"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 3], ["body", "フランス人太る防犯。ぼくしおんとうしょうがっこう。逆休日フランス語。"], ["created_at", "2025-10-06 03:54:34.000894"], ["updated_at", "2025-10-06 03:54:34.000894"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#destroy as HTML
+  Parameters: {"post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://test.host/posts/1
+Filter chain halted as :check_owner rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 28"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:34.007987"], ["updated_at", "2025-10-06 03:54:34.007987"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 29"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:34.010301"], ["updated_at", "2025-10-06 03:54:34.010301"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 11"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 11"], ["description", nil], ["color", "#707010"], ["created_at", "2025-10-06 03:54:34.011257"], ["updated_at", "2025-10-06 03:54:34.011257"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "漠然はっぽう俵果てるどうけつ。"], ["content", "九日気持ちいい全日本。体重ちきゅう喜劇。せっぷくきひん閉める。\n\nぶそうあびる洋服。ちえん雑音約する。かんそくなんべい量。\n\nぐんこの頃遺失。ぶん老齢弱虫。せいじょうまつ面。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:34.012887"], ["updated_at", "2025-10-06 03:54:34.012887"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 30"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:34.015540"], ["updated_at", "2025-10-06 03:54:34.015540"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 3], ["body", "漠然じっかん独裁。じぎする徳川せっぷく。底むくずいぶん。"], ["created_at", "2025-10-06 03:54:34.016031"], ["updated_at", "2025-10-06 03:54:34.016031"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#destroy as HTML
+  Parameters: {"post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://test.host/posts/1
+Filter chain halted as :check_owner rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 31"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:34.023275"], ["updated_at", "2025-10-06 03:54:34.023275"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 12"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 12"], ["description", nil], ["color", "#bef3be"], ["created_at", "2025-10-06 03:54:34.023847"], ["updated_at", "2025-10-06 03:54:34.023847"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "待合よくげつたらすねんじゅう無糖。"], ["content", "平安やさい不健康。せいじょう割り箸そだてる。礎はだかちらかす。\n\n薬なおさらせいかん。フランス人いつ頃全日本。気持ちいい魔法急騰。\n\n米国ぶそう壊す。しゃくや量撃つ。伐採手作り憂い。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:54:34.024412"], ["updated_at", "2025-10-06 03:54:34.024412"], ["user_id", 1], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 32"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:54:34.025499"], ["updated_at", "2025-10-06 03:54:34.025499"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 2], ["body", "奉仕ねんじゅう賢明。ふくへいむらさきいろ胃。学院どうけつたいやく。"], ["created_at", "2025-10-06 03:54:34.025821"], ["updated_at", "2025-10-06 03:54:34.025821"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#destroy as HTML
+  Parameters: {"post_id" => "1", "id" => "1"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.6ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 1"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:50.797446"], ["updated_at", "2025-10-06 03:55:50.797446"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 2"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:50.804968"], ["updated_at", "2025-10-06 03:55:50.804968"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 3"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:50.808517"], ["updated_at", "2025-10-06 03:55:50.808517"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 4"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:50.811463"], ["updated_at", "2025-10-06 03:55:50.811463"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 5"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:50.814239"], ["updated_at", "2025-10-06 03:55:50.814239"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 6"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:50.897022"], ["updated_at", "2025-10-06 03:55:50.897022"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 1"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 1"], ["description", nil], ["color", "#6bfa6b"], ["created_at", "2025-10-06 03:55:50.904454"], ["updated_at", "2025-10-06 03:55:50.904454"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.1ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "おどろく血液備えるたいさぶっきょう。"], ["content", "ひんきゃく飽くまでもげんめつ。おどろくじっかん急騰。書き方せっぷく防犯。\n\n普及超〜ちかく。ころす騎兵鈍器。かおつき羊毛書き方。\n\n春休みじょうき助手。下着零す希望する。明治ことばつきぶそう。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:55:50.918598"], ["updated_at", "2025-10-06 03:55:50.918598"], ["user_id", 1], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#create as HTML
+  Parameters: {"comment" => {"body" => "This is a test comment that should be long enough to pass validation."}, "post_id" => "1"}
+Completed 401 Unauthorized in 3ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.1ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 7"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:50.969830"], ["updated_at", "2025-10-06 03:55:50.969830"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 8"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:50.975095"], ["updated_at", "2025-10-06 03:55:50.975095"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 2"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.1ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 2"], ["description", nil], ["color", "#46b946"], ["created_at", "2025-10-06 03:55:50.976110"], ["updated_at", "2025-10-06 03:55:50.976110"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.6ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "送る浅い騎兵まぎらす体重。"], ["content", "賢明シアトルしきんく。始まる塾生泳ぐ。やさいかんしん出かける。\n\nそだてるかんぜんこうぞく。平安はりい老齢。たて遺失とうさん。\n\n全日本零すさいほう。誓い全日本とちょう。ぶっきょう擬装送る。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:55:50.979951"], ["updated_at", "2025-10-06 03:55:50.979951"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 1], ["body", "はりい弥生いじん。賢明ほにゅうびんないしょばなし。つまるしえんする脱税。"], ["created_at", "2025-10-06 03:55:50.985092"], ["updated_at", "2025-10-06 03:55:50.985092"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => "This is an updated comment body that is long enough."}, "post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Update (0.1ms)[0m  [1m[33mUPDATE "comments" SET "body" = ?, "updated_at" = ? WHERE "comments"."id" = ?[0m  [["body", "This is an updated comment body that is long enough."], ["updated_at", "2025-10-06 03:55:51.007921"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/posts/1
+Completed 302 Found in 27ms (ActiveRecord: 0.3ms (5 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 9"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.020652"], ["updated_at", "2025-10-06 03:55:51.020652"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 10"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.027837"], ["updated_at", "2025-10-06 03:55:51.027837"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 3"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.4ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 3"], ["description", nil], ["color", "#ede3ed"], ["created_at", "2025-10-06 03:55:51.029556"], ["updated_at", "2025-10-06 03:55:51.029556"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "半額没落先ずじゅうどうかちゅう。"], ["content", "まほうつかい犠牲委員。ねばり魔術ちらかす。かんどうするじょうだんきょうふ。\n\n徳川雇用あらそう。電話がいよう休日。ふんきひん親切。\n\n憂い急騰はなはだ。報じるほんらい唄う。逆だいどころ都合。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:55:51.034091"], ["updated_at", "2025-10-06 03:55:51.034091"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.4ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 1], ["body", "掛けるなおさらしばふ。逆まつすいせん。やさしいそだてる割り箸。"], ["created_at", "2025-10-06 03:55:51.038784"], ["updated_at", "2025-10-06 03:55:51.038784"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => "This is an updated comment body that is long enough."}, "post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Update (0.6ms)[0m  [1m[33mUPDATE "comments" SET "body" = ?, "updated_at" = ? WHERE "comments"."id" = ?[0m  [["body", "This is an updated comment body that is long enough."], ["updated_at", "2025-10-06 03:55:51.046974"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/posts/1
+Completed 302 Found in 10ms (ActiveRecord: 2.5ms (5 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 11"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.053403"], ["updated_at", "2025-10-06 03:55:51.053403"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (1.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 12"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.057215"], ["updated_at", "2025-10-06 03:55:51.057215"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 4"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 4"], ["description", nil], ["color", "#a6a6ed"], ["created_at", "2025-10-06 03:55:51.058000"], ["updated_at", "2025-10-06 03:55:51.058000"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "終点気持ちいいしあとるしはっぽういつ頃。"], ["content", "魔術じっかん新婚旅行。急騰譜面約する。開閉金縛り難しい。\n\n希望する陳列室しずむ。ほんらいせいしんよわよわしい。ぼうずまつきょうかい。\n\n漂う騎兵ごふく。けしきころすしょうじょう。雑音左手ちがい。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:55:51.058694"], ["updated_at", "2025-10-06 03:55:51.058694"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 1], ["body", "こうおつかちゅうさいばん。防犯どろ雑音。やさい誤用重い。"], ["created_at", "2025-10-06 03:55:51.059270"], ["updated_at", "2025-10-06 03:55:51.059270"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => ""}, "post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering comments/edit.html.erb within layouts/application
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered comments/edit.html.erb within layouts/application (Duration: 1.0ms | GC: 0.0ms)
+  Template rendering was prevented by rspec-rails. Use `render_views` to verify rendered view contents if necessary.
+  Rendered layout layouts/application.html.erb (Duration: 1.8ms | GC: 0.0ms)
+Completed 422 Unprocessable Content in 7ms (Views: 5.4ms | ActiveRecord: 0.1ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 13"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.070037"], ["updated_at", "2025-10-06 03:55:51.070037"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 14"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.073131"], ["updated_at", "2025-10-06 03:55:51.073131"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 5"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 5"], ["description", nil], ["color", "#835d83"], ["created_at", "2025-10-06 03:55:51.073853"], ["updated_at", "2025-10-06 03:55:51.073853"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "こうつうけいじばん抑制誘惑ひんかく。"], ["content", "きんくあらそう伐採。ぐんよわよわしいえきびょう。かんじるみなもとかんどうする。\n\nうんがいいかぶしきしじょう気持ちいい。急騰じぎする活用。ずいぶんあらそうじぎする。\n\n人口あつかいいつ頃。あらす擬装撃つ。色盲入江九日。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:55:51.074452"], ["updated_at", "2025-10-06 03:55:51.074452"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 15"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.075874"], ["updated_at", "2025-10-06 03:55:51.075874"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 3], ["body", "殻うえる犠牲。老齢浸す書き方。察知かおつき零す。"], ["created_at", "2025-10-06 03:55:51.076891"], ["updated_at", "2025-10-06 03:55:51.076891"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => "This is an updated comment body that is long enough."}, "post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+Redirected to http://test.host/posts/1
+Filter chain halted as :check_owner rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 16"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.081439"], ["updated_at", "2025-10-06 03:55:51.081439"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 17"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.082666"], ["updated_at", "2025-10-06 03:55:51.082666"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 18"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.084644"], ["updated_at", "2025-10-06 03:55:51.084644"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 6"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 6"], ["description", nil], ["color", "#dc7474"], ["created_at", "2025-10-06 03:55:51.085594"], ["updated_at", "2025-10-06 03:55:51.085594"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "喜劇きょうきはんそうやさしいきいろ。"], ["content", "ひんかくきょうしつ量。きょうしつ旧姓ちがい。傑作たいこうするふかさ。\n\n泳ぐフランス語丼。けいかん大尉もはん。ししょくあびるずいぶん。\n\n双評価約する。浅い総括ざんぴん。きんくそんざいしょくん。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:55:51.086415"], ["updated_at", "2025-10-06 03:55:51.086415"], ["user_id", 3], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 2], ["body", "唄う殻品詞。春休み電源こいぬ。特殊しずむ話。"], ["created_at", "2025-10-06 03:55:51.087530"], ["updated_at", "2025-10-06 03:55:51.087530"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => "This is an updated comment body that is long enough."}, "post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://test.host/posts/1
+Filter chain halted as :check_owner rendered or redirected
+Completed 302 Found in 1ms (ActiveRecord: 0.1ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 19"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.093593"], ["updated_at", "2025-10-06 03:55:51.093593"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 7"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 7"], ["description", nil], ["color", "#479090"], ["created_at", "2025-10-06 03:55:51.094451"], ["updated_at", "2025-10-06 03:55:51.094451"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "せいぞうがいよう消す液体大丈夫。"], ["content", "じぞうかわかす掛ける。あしくび超音波かおつき。ちあんなおさらいっさくじつ。\n\nけいかん奇襲同僚。たくすすんか色盲。つまる一文字店。\n\n禍根じぎする廃墟。報じる味噌むこう。せいじょう希望する閉める。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:55:51.095581"], ["updated_at", "2025-10-06 03:55:51.095581"], ["user_id", 1], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 20"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.097288"], ["updated_at", "2025-10-06 03:55:51.097288"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 2], ["body", "漠然泳ぐずいぶん。血液よくげつかぜ。じきしょうそう仕事重い。"], ["created_at", "2025-10-06 03:55:51.098873"], ["updated_at", "2025-10-06 03:55:51.098873"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#update as HTML
+  Parameters: {"comment" => {"body" => "This is an updated comment body that is long enough."}, "post_id" => "1", "id" => "1"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 21"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.108086"], ["updated_at", "2025-10-06 03:55:51.108086"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 22"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.109728"], ["updated_at", "2025-10-06 03:55:51.109728"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 8"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 8"], ["description", nil], ["color", "#e2ace2"], ["created_at", "2025-10-06 03:55:51.110171"], ["updated_at", "2025-10-06 03:55:51.110171"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "せんりゅうあくれいあっとうする指紋せいぞう。"], ["content", "約するきんくいく。まつり黒板きょうはんしゃ。あつかい安泰あおい。\n\n割り箸だいどころ店。白菊底牛乳。味噌店みなもと。\n\n凝固かいたく旧姓。じじょでん不健康避ける。軒哀れむ殻。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:55:51.110638"], ["updated_at", "2025-10-06 03:55:51.110638"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 1], ["body", "助手そあくすんか。碁かわかすきひん。魅力避けるじぞう。"], ["created_at", "2025-10-06 03:55:51.111107"], ["updated_at", "2025-10-06 03:55:51.111107"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
+Processing by CommentsController#destroy as HTML
+  Parameters: {"post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/posts/1
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms (5 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 23"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.121314"], ["updated_at", "2025-10-06 03:55:51.121314"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 24"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.122983"], ["updated_at", "2025-10-06 03:55:51.122983"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 9"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 9"], ["description", nil], ["color", "#b34242"], ["created_at", "2025-10-06 03:55:51.123727"], ["updated_at", "2025-10-06 03:55:51.123727"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "どろあっとうするおかねやさい割り箸。"], ["content", "馬鹿馬鹿しいこくみんとくに。せんりゅう飽くまでも無駄。まもるはなはだ遺失。\n\n下さいおとといけいむしょ。同僚伝統果てる。暴力いつ頃親切。\n\n一文字ちょさくけんしょうじょう。いじん金縛りせっぷく。当て字仕事寮生。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:55:51.124148"], ["updated_at", "2025-10-06 03:55:51.124148"], ["user_id", 2], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 1], ["body", "希望するどろ形。白菊米国ねんじゅう。配慮しょうがっこう金縛り。"], ["created_at", "2025-10-06 03:55:51.124810"], ["updated_at", "2025-10-06 03:55:51.124810"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#destroy as HTML
+  Parameters: {"post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Destroy (0.0ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Redirected to http://test.host/posts/1
+Completed 302 Found in 2ms (ActiveRecord: 0.1ms (5 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 25"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.130922"], ["updated_at", "2025-10-06 03:55:51.130922"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 26"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.132723"], ["updated_at", "2025-10-06 03:55:51.132723"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 27"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.136177"], ["updated_at", "2025-10-06 03:55:51.136177"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 10"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 10"], ["description", nil], ["color", "#020802"], ["created_at", "2025-10-06 03:55:51.136958"], ["updated_at", "2025-10-06 03:55:51.136958"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "原油始まる人性とうき戦没。"], ["content", "かくじっけん黙るふそく。なおさらまつりかっこう。堀川けいむしょいじん。\n\n太るつまるかたみち。隆起血液がんばる。魔術悲しみ唄う。\n\nいく零す下さい。靖国神社大仏牛乳。しきもうげんめつあくれい。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:55:51.137724"], ["updated_at", "2025-10-06 03:55:51.137724"], ["user_id", 3], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.6ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 2], ["body", "つく奉仕しきもう。きょうどうぼくしかいじゅう。退く犠牲かたみち。"], ["created_at", "2025-10-06 03:55:51.138047"], ["updated_at", "2025-10-06 03:55:51.138047"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#destroy as HTML
+  Parameters: {"post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://test.host/posts/1
+Filter chain halted as :check_owner rendered or redirected
+Completed 302 Found in 2ms (ActiveRecord: 0.0ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 28"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.144517"], ["updated_at", "2025-10-06 03:55:51.144517"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 29"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.146137"], ["updated_at", "2025-10-06 03:55:51.146137"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 30"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.147949"], ["updated_at", "2025-10-06 03:55:51.147949"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 11"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 11"], ["description", nil], ["color", "#841515"], ["created_at", "2025-10-06 03:55:51.149447"], ["updated_at", "2025-10-06 03:55:51.149447"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "凝固つくおととい廉価羊毛。"], ["content", "こいぬ馬下さい。白菊出かけるきげんご。入江電話さいばん。\n\n隆起宜しくないしょばなし。ちょさくけんしゃくや軒。きげんごとりあえずよぼう。\n\nりゃくず独裁終点。鈍器戦没つうやく。いたずらじゅうらいとうき。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:55:51.150605"], ["updated_at", "2025-10-06 03:55:51.150605"], ["user_id", 3], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 2], ["body", "手作りはちまききょうはんしゃ。暴力脱税血液。たいりく交錯気持ちいい。"], ["created_at", "2025-10-06 03:55:51.151269"], ["updated_at", "2025-10-06 03:55:51.151269"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
+Processing by CommentsController#destroy as HTML
+  Parameters: {"post_id" => "1", "id" => "1"}
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."post_id" = ? AND "comments"."id" = ? LIMIT ?[0m  [["post_id", 1], ["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.0ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+Redirected to http://test.host/posts/1
+Filter chain halted as :check_owner rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.1ms (4 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mComment Count (0.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "comments"[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 31"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.157852"], ["updated_at", "2025-10-06 03:55:51.157852"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mCategory Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "categories" WHERE "categories"."name" = ? LIMIT ?[0m  [["name", "Category 12"], ["LIMIT", 1]]
+  [1m[36mCategory Create (0.0ms)[0m  [1m[32mINSERT INTO "categories" ("name", "description", "color", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Category 12"], ["description", nil], ["color", "#01c601"], ["created_at", "2025-10-06 03:55:51.158445"], ["updated_at", "2025-10-06 03:55:51.158445"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mPost Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "posts" WHERE "posts"."slug" = ? AND "posts"."id" IS NOT NULL LIMIT ?[0m  [["slug", ""], ["LIMIT", 1]]
+  [1m[36mPost Create (0.0ms)[0m  [1m[32mINSERT INTO "posts" ("title", "content", "author", "published", "created_at", "updated_at", "user_id", "category_id", "slug") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["title", "割り箸殻黒板長唄しょうりゃく。"], ["content", "一文字しずむ割り箸。指紋かんどうするいう。しえんする〜亭けいじばん。\n\n約するよわよわしいかんどうする。かくじっけん面ねばり。かたみち封筒伝統。\n\n塾生胃じょうき。つくせんりゅうあしくび。出かけるしえんするみなもと。"], ["author", nil], ["published", 1], ["created_at", "2025-10-06 03:55:51.158836"], ["updated_at", "2025-10-06 03:55:51.158836"], ["user_id", 1], ["category_id", 1], ["slug", ""]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mUser Exists? (0.0ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "[FILTERED]"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.0ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "reset_password_token", "reset_password_sent_at", "remember_created_at", "name", "bio", "website", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["email", "[FILTERED]"], ["encrypted_password", "[FILTERED]"], ["reset_password_token", "[FILTERED]"], ["reset_password_sent_at", "[FILTERED]"], ["remember_created_at", nil], ["name", "Test User 32"], ["bio", "Test bio for this user"], ["website", "https://example.com"], ["created_at", "2025-10-06 03:55:51.159882"], ["updated_at", "2025-10-06 03:55:51.159882"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mComment Create (0.0ms)[0m  [1m[32mINSERT INTO "comments" ("post_id", "user_id", "body", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["post_id", 1], ["user_id", 2], ["body", "とうき察知手作り。軒きょうしつそんざい。迷子かんぜんむぼう。"], ["created_at", "2025-10-06 03:55:51.160176"], ["updated_at", "2025-10-06 03:55:51.160176"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Processing by CommentsController#destroy as HTML
+  Parameters: {"post_id" => "1", "id" => "1"}
+Completed 401 Unauthorized in 0ms (ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
