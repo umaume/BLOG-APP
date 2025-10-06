@@ -1,15 +1,79 @@
-<% content_for :title, "Showing post" %>
+<% content_for :title, @post.title %>
+<% add_breadcrumb "ホーム", root_path %>
+<% add_breadcrumb "投稿一覧", posts_path %>
+<% add_breadcrumb truncate(@post.title, length: 30) %>
 
-<div class="md:w-2/3 w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
-  <% end %>
+<div class="max-w-4xl mx-auto">
+  <article class="bg-white rounded-lg shadow-md p-4 sm:p-6 lg:p-8">
+    <!-- Author info -->
+    <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 pb-6 border-b space-y-4 sm:space-y-0">
+      <div class="flex items-center space-x-3">
+        <% if @post.user.avatar.attached? %>
+          <%= image_tag @post.user.avatar_thumbnail(96), class: "w-10 h-10 sm:w-12 sm:h-12 rounded-full object-cover flex-shrink-0" %>
+        <% else %>
+          <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-gray-300 flex items-center justify-center flex-shrink-0">
+            <span class="text-sm font-bold text-gray-600"><%= @post.user.display_name.first.upcase %></span>
+          </div>
+        <% end %>
+        <div class="min-w-0 flex-1">
+          <p class="font-medium text-gray-900 truncate">
+            <%= link_to @post.user.display_name, @post.user, class: "hover:text-blue-600" %>
+          </p>
+          <p class="text-sm text-gray-500">
+            <%= published_time_in_japanese(@post.created_at) %>
+          </p>
+        </div>
+      </div>
+      
+      <% if user_signed_in? && @post.user == current_user %>
+        <div class="flex space-x-2 self-start sm:self-center">
+          <%= link_to t('actions.edit'), edit_post_path(@post), class: "text-sm px-3 py-1 bg-gray-100 hover:bg-gray-200 rounded-md whitespace-nowrap" %>
+          <%= button_to t('actions.delete'), @post, method: :delete, class: "text-sm px-3 py-1 bg-red-600 text-white hover:bg-red-700 rounded-md whitespace-nowrap", data: { turbo_confirm: t('posts.actions.confirm_delete') } %>
+        </div>
+      <% elsif user_signed_in? %>
+        <div class="self-start sm:self-center">
+          <%= render 'shared/follow_button', user: @post.user %>
+        </div>
+      <% end %>
+    </div>
 
-  <h1 class="font-bold text-4xl">Showing post</h1>
+    <!-- Post content -->
+    <h1 class="font-bold text-xl sm:text-2xl lg:text-3xl mb-4 text-gray-900 leading-tight break-words"><%= @post.title %></h1>
 
-  <%= render @post %>
+    <!-- Category and Tags -->
+    <div class="mb-6 flex flex-wrap items-center gap-1 sm:gap-2">
+      <% if @post.category %>
+        <span class="inline-flex items-center px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-medium text-white" style="background-color: <%= @post.category.color %>">
+          <%= @post.category.name %>
+        </span>
+      <% end %>
+      
+      <% if @post.tags.any? %>
+        <% @post.tags.each do |tag| %>
+          <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium text-white" style="background-color: <%= tag.color %>">
+            #<%= tag.name %>
+          </span>
+        <% end %>
+      <% end %>
+    </div>
 
-  <%= link_to "Edit this post", edit_post_path(@post), class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-  <%= link_to "Back to posts", posts_path, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-  <%= button_to "Destroy this post", @post, method: :delete, form_class: "sm:inline-block mt-2 sm:mt-0 sm:ml-2", class: "w-full rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer", data: { turbo_confirm: "Are you sure?" } %>
+    <div class="prose prose-sm sm:prose max-w-none mb-6 text-gray-700 leading-relaxed">
+      <%= simple_format(@post.content) %>
+    </div>
+
+    <!-- Like Button -->
+    <div class="mb-6 pb-6 border-b">
+      <%= render 'like_button', post: @post %>
+    </div>
+
+    <!-- Images (temporarily disabled) -->
+  </article>
+
+  <!-- Comments Section -->
+  <%= render 'comments/section', post: @post, comment: @comment, comments: @comments %>
+
+  <!-- Navigation -->
+  <div class="mt-8 text-center">
+    <%= link_to t('posts.show.back_to_posts'), posts_path, class: "inline-block px-4 py-2 bg-gray-100 hover:bg-gray-200 rounded-md text-gray-700" %>
+  </div>
 </div>

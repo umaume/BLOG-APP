@@ -1,10 +1,16 @@
-<% content_for :title, "Editing post" %>
+<% content_for :title, t('posts.edit.title') %>
+<% add_breadcrumb "ホーム", root_path %>
+<% add_breadcrumb "投稿一覧", posts_path %>
+<% add_breadcrumb truncate(@post.title, length: 30), @post %>
+<% add_breadcrumb "編集" %>
 
-<div class="md:w-2/3 w-full">
-  <h1 class="font-bold text-4xl">Editing post</h1>
+<div class="w-full max-w-4xl">
+  <h1 class="font-bold text-2xl sm:text-3xl lg:text-4xl mb-6"><%= t('posts.edit.title') %></h1>
 
   <%= render "form", post: @post %>
 
-  <%= link_to "Show this post", @post, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-  <%= link_to "Back to posts", posts_path, class: "w-full sm:w-auto text-center mt-2 sm:mt-0 sm:ml-2 rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
+  <div class="flex flex-col sm:flex-row gap-3 mt-4">
+    <%= link_to t('actions.show'), @post, class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-200 font-medium transition-colors" %>
+    <%= link_to t('actions.back'), posts_path, class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-200 font-medium transition-colors" %>
+  </div>
 </div>

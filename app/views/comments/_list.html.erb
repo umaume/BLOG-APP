@@ -1,0 +1,7 @@
+<% if comments.any? %>
+  <% comments.each_with_index do |comment, index| %>
+    <%= render 'comments/comment', comment: comment, post: post, index: index %>
+  <% end %>
+<% else %>
+  <%= render 'comments/empty_state' %>
+<% end %>

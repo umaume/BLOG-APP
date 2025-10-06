@@ -1,0 +1,16 @@
+<% if user_signed_in? && user != current_user %>
+  <div class="follow-button">
+    <% if current_user.following?(user) %>
+      <%= button_to t('follows.unfollow'), follow_path(current_user.active_follows.find_by(following: user)), 
+                    method: :delete, 
+                    class: "px-3 py-1 bg-gray-200 text-gray-700 rounded-md hover:bg-gray-300 text-sm",
+                    remote: true %>
+    <% else %>
+      <%= button_to t('follows.follow'), follows_path, 
+                    params: { following_id: user.id }, 
+                    method: :post,
+                    class: "px-3 py-1 bg-blue-600 text-white rounded-md hover:bg-blue-700 text-sm",
+                    remote: true %>
+    <% end %>
+  </div>
+<% end %>

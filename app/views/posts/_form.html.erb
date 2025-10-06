@@ -1,9 +1,9 @@
-<%= form_with(model: post, class: "contents") do |form| %>
+<%= form_with(model: post, class: "bg-white rounded-lg shadow-md p-4 sm:p-6") do |form| %>
   <% if post.errors.any? %>
-    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mt-3">
-      <h2><%= pluralize(post.errors.count, "error") %> prohibited this post from being saved:</h2>
+    <div id="error_explanation" class="bg-red-50 text-red-500 px-3 py-2 font-medium rounded-md mb-4">
+      <h2 class="text-sm sm:text-base"><%= t('errors.validation_failed') %>:</h2>
 
-      <ul class="list-disc ml-6">
+      <ul class="list-disc ml-6 text-sm">
         <% post.errors.each do |error| %>
           <li><%= error.full_message %></li>
         <% end %>
@@ -11,27 +11,41 @@
     </div>
   <% end %>
 
-  <div class="my-5">
-    <%= form.label :title %>
-    <%= form.text_field :title, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": post.errors[:title].none?, "border-red-400 focus:outline-red-600": post.errors[:title].any?}] %>
+  <div class="mb-4 sm:mb-5">
+    <%= form.label :title, t('posts.form.title_label'), class: "block text-sm font-medium text-gray-700 mb-2" %>
+    <%= form.text_field :title, placeholder: t('posts.form.title_placeholder'), class: ["block shadow-sm rounded-md border px-3 py-2 w-full text-sm sm:text-base", {"border-gray-300 focus:ring-blue-500 focus:border-blue-500": post.errors[:title].none?, "border-red-400 focus:ring-red-500 focus:border-red-500": post.errors[:title].any?}] %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :content %>
-    <%= form.textarea :content, rows: 4, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": post.errors[:content].none?, "border-red-400 focus:outline-red-600": post.errors[:content].any?}] %>
+  <div class="mb-4 sm:mb-5">
+    <%= form.label :content, t('posts.form.content_label'), class: "block text-sm font-medium text-gray-700 mb-2" %>
+    <%= form.textarea :content, rows: 6, placeholder: t('posts.form.content_placeholder'), class: ["block shadow-sm rounded-md border px-3 py-2 w-full text-sm sm:text-base", {"border-gray-300 focus:ring-blue-500 focus:border-blue-500": post.errors[:content].none?, "border-red-400 focus:ring-red-500 focus:border-red-500": post.errors[:content].any?}] %>
   </div>
 
-  <div class="my-5">
-    <%= form.label :author %>
-    <%= form.text_field :author, class: ["block shadow-sm rounded-md border px-3 py-2 mt-2 w-full", {"border-gray-400 focus:outline-blue-600": post.errors[:author].none?, "border-red-400 focus:outline-red-600": post.errors[:author].any?}] %>
+  <div class="mb-4 sm:mb-5">
+    <%= form.label :category_id, "カテゴリー", class: "block text-sm font-medium text-gray-700 mb-2" %>
+    <%= form.collection_select :category_id, @categories, :id, :name, 
+        { prompt: "カテゴリーを選択してください（オプション）" }, 
+        { class: ["block shadow-sm rounded-md border px-3 py-2 w-full text-sm sm:text-base", {"border-gray-300 focus:ring-blue-500 focus:border-blue-500": post.errors[:category_id].none?, "border-red-400 focus:ring-red-500 focus:border-red-500": post.errors[:category_id].any?}] } %>
   </div>
 
-  <div class="my-5 flex items-center gap-2">
-    <%= form.label :published %>
-    <%= form.checkbox :published, class: ["block shadow-sm rounded-md border order-first h-5 w-5", {"border-gray-400 focus:outline-blue-600": post.errors[:published].none?, "border-red-400 focus:outline-red-600": post.errors[:published].any?}] %>
+  <div class="mb-4 sm:mb-5">
+    <%= form.label :tag_names, "タグ", class: "block text-sm font-medium text-gray-700 mb-2" %>
+    <%= form.text_field :tag_names, placeholder: "プログラミング, Rails, Ruby（カンマ区切り）", class: ["block shadow-sm rounded-md border px-3 py-2 w-full text-sm sm:text-base", {"border-gray-300 focus:ring-blue-500 focus:border-blue-500": post.errors[:tag_names].none?, "border-red-400 focus:ring-red-500 focus:border-red-500": post.errors[:tag_names].any?}] %>
+    <p class="text-xs sm:text-sm text-gray-500 mt-1">複数のタグをカンマ区切りで入力してください。存在しないタグは自動的に作成されます。</p>
   </div>
 
-  <div class="inline">
-    <%= form.submit class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white inline-block font-medium cursor-pointer" %>
+  <div class="mb-4 sm:mb-5">
+    <%= form.label :images, t('posts.form.images_label'), class: "block text-sm font-medium text-gray-700 mb-2" %>
+    <%= form.file_field :images, multiple: true, accept: "image/*", class: ["block shadow-sm rounded-md border px-3 py-2 w-full text-sm", {"border-gray-300 focus:ring-blue-500 focus:border-blue-500": post.errors[:images].none?, "border-red-400 focus:ring-red-500 focus:border-red-500": post.errors[:images].any?}] %>
+    <p class="text-xs sm:text-sm text-gray-500 mt-1"><%= t('posts.form.images_description') %></p>
+  </div>
+
+  <div class="mb-6 flex items-center space-x-2">
+    <%= form.checkbox :published, class: ["h-4 w-4 rounded border-gray-300 text-blue-600 focus:ring-blue-500", {"focus:ring-blue-500": post.errors[:published].none?, "border-red-400 focus:ring-red-500": post.errors[:published].any?}] %>
+    <%= form.label :published, t('posts.form.published_label'), class: "text-sm font-medium text-gray-700" %>
+  </div>
+
+  <div class="flex flex-col sm:flex-row gap-3">
+    <%= form.submit class: "w-full sm:w-auto rounded-md px-4 py-2.5 bg-blue-600 hover:bg-blue-700 text-white font-medium cursor-pointer transition-colors" %>
   </div>
 <% end %>

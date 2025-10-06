@@ -1,0 +1,200 @@
+ja:
+  # アプリケーション全般
+  app_name: "Murmur"
+  site_title: "Murmur Blog - ソーシャル ブログ プラットフォーム"
+
+  # ナビゲーション
+  navigation:
+    all_posts: "すべての投稿"
+    timeline: "タイムライン"
+    new_post: "新しい投稿"
+    my_profile: "マイプロフィール"
+    edit_profile: "プロフィール編集"
+    settings: "設定"
+    logout: "ログアウト"
+
+  # 投稿関連
+  posts:
+    index:
+      title: "最新の投稿"
+      no_posts: "投稿が見つかりません。"
+      write_first: "最初の投稿を書く"
+    show:
+      read_more: "続きを読む"
+      back_to_posts: "← 投稿一覧に戻る"
+      comments: "コメント"
+      add_comment: "コメントを追加"
+      post_comment: "コメントを投稿"
+      no_comments: "まだコメントがありません。最初にコメントしませんか？"
+    new:
+      title: "新しい投稿を作成"
+      create_post: "投稿を作成"
+    edit:
+      title: "投稿を編集"
+      update_post: "投稿を更新"
+    form:
+      title_label: "タイトル"
+      title_placeholder: "投稿のタイトルを入力してください"
+      content_label: "内容"
+      content_placeholder: "投稿の内容を入力してください..."
+      published_label: "公開する"
+      images_label: "画像 (オプション)"
+      images_description: "投稿と一緒にアップロードする画像を複数選択できます。"
+    actions:
+      edit: "編集"
+      delete: "削除"
+      create: "投稿を作成"
+      update: "投稿を更新"
+      back: "戻る"
+      show: "表示"
+      confirm_delete: "本当に削除しますか？"
+
+  # タイムライン
+  timeline:
+    title: "あなたのタイムライン"
+    empty_title: "タイムラインが空です"
+    empty_description: "他のユーザーをフォローして、彼らの投稿をタイムラインで見ましょう。"
+    discover_posts: "投稿を発見"
+    write_first_post: "最初の投稿を書く"
+
+  # コメント関連
+  comments:
+    share_thoughts: "この投稿について感想を共有しましょう"
+    sign_in_to_comment: "コメントするには%{sign_in}または%{sign_up}してください"
+    sign_in: "ログイン"
+    sign_up: "新規登録"
+    empty_state:
+      title: "まだコメントがありません"
+      description: "この投稿について最初にコメントしませんか？"
+      button: "コメントを書く"
+    form:
+      placeholder: "この投稿についてどう思いますか？"
+      submit: "コメントを投稿"
+      cancel: "キャンセル"
+      notifications: "返信通知を受け取る"
+      shortcut: "Ctrl+Enterで投稿"
+    actions:
+      reply: "返信"
+      like: "いいね"
+      edit: "編集"
+      delete: "削除"
+      confirm_delete: "このコメントを削除しますか？"
+
+  # 認証関連（Devise）
+  devise:
+    sign_in: "サインイン"
+    sign_up: "サインアップ"
+    sign_out: "サインアウト"
+    email: "メールアドレス"
+    password: "パスワード"
+    password_confirmation: "パスワード（確認）"
+    name: "名前"
+    remember_me: "ログイン状態を保持する"
+    forgot_password: "パスワードを忘れた場合"
+    no_account: "アカウントをお持ちでない場合"
+    have_account: "すでにアカウントをお持ちの場合"
+    minimum_password_length: "最低%{count}文字"
+
+  # ActiveRecord（モデル）の日本語化
+  activerecord:
+    models:
+      user: "ユーザー"
+      post: "投稿"
+      comment: "コメント"
+      like: "いいね"
+      follow: "フォロー"
+    attributes:
+      user:
+        name: "名前"
+        email: "メールアドレス"
+        password: "パスワード"
+        password_confirmation: "パスワード（確認）"
+        current_password: "現在のパスワード"
+        bio: "自己紹介"
+        website: "ウェブサイト"
+        avatar: "アバター画像"
+        created_at: "登録日時"
+        updated_at: "更新日時"
+      post:
+        title: "タイトル"
+        content: "内容"
+        published: "公開状態"
+        user: "投稿者"
+        created_at: "投稿日時"
+        updated_at: "更新日時"
+      comment:
+        body: "コメント内容"
+        user: "投稿者"
+        post: "投稿"
+        created_at: "投稿日時"
+        updated_at: "更新日時"
+
+  # 共通アクション
+  actions:
+    create: "作成"
+    update: "更新"
+    delete: "削除"
+    edit: "編集"
+    show: "表示"
+    back: "戻る"
+    cancel: "キャンセル"
+    save: "保存"
+    submit: "送信"
+    confirm: "確認"
+
+  # 時間表示
+  time:
+    formats:
+      default: "%Y年%m月%d日 %H:%M"
+      
+  datetime:
+    distance_in_words:
+      half_a_minute: "30秒"
+      less_than_x_seconds:
+        one: "1秒未満"
+        other: "%{count}秒未満"
+      x_seconds:
+        one: "1秒"
+        other: "%{count}秒"
+      less_than_x_minutes:
+        one: "1分未満"
+        other: "%{count}分未満"
+      x_minutes:
+        one: "1分"
+        other: "%{count}分"
+      about_x_hours:
+        one: "約1時間"
+        other: "約%{count}時間"
+      x_days:
+        one: "1日"
+        other: "%{count}日"
+      about_x_months:
+        one: "約1ヶ月"
+        other: "約%{count}ヶ月"
+      x_months:
+        one: "1ヶ月"
+        other: "%{count}ヶ月"
+      about_x_years:
+        one: "約1年"
+        other: "約%{count}年"
+      over_x_years:
+        one: "1年以上"
+        other: "%{count}年以上"
+      almost_x_years:
+        one: "1年近く"
+        other: "%{count}年近く"
+
+  # 成功・エラーメッセージ
+  notices:
+    post_created: "投稿が正常に作成されました。"
+    post_updated: "投稿が正常に更新されました。"
+    post_deleted: "投稿が正常に削除されました。"
+    comment_created: "コメントが正常に追加されました。"
+    comment_updated: "コメントが正常に更新されました。"
+    comment_deleted: "コメントが正常に削除されました。"
+    profile_updated: "プロフィールが正常に更新されました。"
+
+  errors:
+    not_authorized: "この操作を実行する権限がありません。"
+    not_found: "お探しのページが見つかりません。"
+    validation_failed: "入力内容に問題があります。"

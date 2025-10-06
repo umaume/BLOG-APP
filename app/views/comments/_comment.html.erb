@@ -1,0 +1,98 @@
+<div id="<%= dom_id comment %>" class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 transition-all duration-200 hover:shadow-md">
+  <!-- Comment Header -->
+  <div class="flex items-start justify-between mb-3">
+    <div class="flex items-start space-x-3 flex-1 min-w-0">
+      <!-- User Avatar -->
+      <div class="w-10 h-10 rounded-full overflow-hidden bg-gray-300 flex items-center justify-center flex-shrink-0">
+        <% if comment.user.avatar.attached? %>
+          <%= image_tag comment.user.avatar_thumbnail(80), 
+              alt: "#{comment.user.display_name}のアバター", 
+              class: "w-full h-full object-cover" %>
+        <% else %>
+          <span class="text-sm font-bold text-gray-600">
+            <%= comment.user.display_name.first.upcase %>
+          </span>
+        <% end %>
+      </div>
+      
+      <!-- User Info -->
+      <div class="flex-1 min-w-0">
+        <div class="flex items-center space-x-2 mb-1">
+          <%= link_to comment.user.display_name, comment.user, 
+              class: "font-medium text-gray-900 hover:text-blue-600 truncate" %>
+          <% if comment.user == post.user %>
+            <span class="bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded-full font-medium">
+              投稿者
+            </span>
+          <% end %>
+          <% if local_assigns[:index] == 0 %>
+            <span class="bg-green-100 text-green-800 text-xs px-2 py-0.5 rounded-full font-medium">
+              最初のコメント
+            </span>
+          <% end %>
+        </div>
+        <div class="flex items-center space-x-2 text-sm text-gray-500">
+          <time datetime="<%= comment.created_at.iso8601 %>">
+            <%= time_ago_in_words(comment.created_at) %>前
+          </time>
+          <% if comment.created_at != comment.updated_at %>
+            <span>•</span>
+            <span class="text-gray-400">編集済み</span>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Comment Actions -->
+    <% if user_signed_in? && comment.user == current_user %>
+      <div class="flex items-center space-x-1 ml-2">
+        <%= link_to edit_post_comment_path(post, comment), 
+            class: "p-1 text-gray-400 hover:text-blue-600 rounded transition-colors",
+            title: "編集" do %>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"></path>
+          </svg>
+        <% end %>
+        
+        <%= button_to [post, comment], 
+            method: :delete, 
+            class: "p-1 text-gray-400 hover:text-red-600 rounded transition-colors",
+            title: "削除",
+            data: { 
+              turbo_method: :delete,
+              turbo_confirm: "このコメントを削除しますか？" 
+            } do %>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"></path>
+          </svg>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <!-- Comment Content -->
+  <div class="ml-13 text-gray-700 leading-relaxed">
+    <div class="prose prose-sm max-w-none">
+      <%= simple_format(comment.body, {}, wrapper_tag: "div") %>
+    </div>
+    
+    <!-- Comment Actions for all users -->
+    <% if user_signed_in? && comment.user != current_user %>
+      <div class="flex items-center space-x-4 mt-3 pt-3 border-t border-gray-100">
+        <button class="flex items-center space-x-1 text-sm text-gray-500 hover:text-blue-600 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6"></path>
+          </svg>
+          <span>返信</span>
+        </button>
+        
+        <button class="flex items-center space-x-1 text-sm text-gray-500 hover:text-red-600 transition-colors">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+          </svg>
+          <span>いいね</span>
+        </button>
+      </div>
+    <% end %>
+  </div>
+</div>

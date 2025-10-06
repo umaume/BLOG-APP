@@ -1,0 +1,43 @@
+<div id="like-button-<%= post.id %>" class="flex items-center space-x-1">
+  <% if user_signed_in? %>
+    <% if post.liked_by?(current_user) %>
+      <%= link_to unlike_post_path(post), 
+          method: :delete, 
+          class: "flex items-center space-x-1 text-red-600 hover:text-red-700 transition-colors group", 
+          data: { 
+            turbo_method: :delete,
+            turbo_confirm: "いいねを取り消しますか？" 
+          } do %>
+        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 20 20">
+          <path fill-rule="evenodd" d="M3.172 5.172a4 4 0 015.656 0L10 6.343l1.172-1.171a4 4 0 115.656 5.656L10 17.657l-6.828-6.829a4 4 0 010-5.656z" clip-rule="evenodd"></path>
+        </svg>
+        <span class="text-sm font-medium">
+          <%= post.likes.count %>
+        </span>
+      <% end %>
+    <% else %>
+      <%= link_to like_post_path(post), 
+          method: :post, 
+          class: "flex items-center space-x-1 text-gray-500 hover:text-red-600 transition-colors group", 
+          data: { 
+            turbo_method: :post 
+          } do %>
+        <svg class="w-5 h-5 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+        </svg>
+        <span class="text-sm font-medium">
+          <%= post.likes.count %>
+        </span>
+      <% end %>
+    <% end %>
+  <% else %>
+    <%= link_to new_user_session_path, class: "flex items-center space-x-1 text-gray-400 hover:text-gray-500 transition-colors" do %>
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+      </svg>
+      <span class="text-sm">
+        <%= post.likes.count %>
+      </span>
+    <% end %>
+  <% end %>
+</div>

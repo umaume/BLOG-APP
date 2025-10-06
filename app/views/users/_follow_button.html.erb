@@ -1,0 +1,13 @@
+<div id="follow-button-<%= user.id %>">
+  <% if user_signed_in? && current_user != user %>
+    <% if current_user.following?(user) %>
+      <%= button_to user_follows_path(user), method: :delete, remote: true, class: "px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400 transition-colors" do %>
+        Following
+      <% end %>
+    <% else %>
+      <%= button_to user_follows_path(user), method: :post, remote: true, class: "px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 transition-colors" do %>
+        Follow
+      <% end %>
+    <% end %>
+  <% end %>
+</div>

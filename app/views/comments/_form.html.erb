@@ -1,0 +1,102 @@
+<% if user_signed_in? %>
+  <div id="comment-form-container" class="bg-white rounded-lg shadow-sm border border-gray-200 p-4 sm:p-6 mb-6 transition-all duration-300">
+    <%= form_with(model: [post, comment], 
+        local: false, 
+        class: "space-y-4",
+        data: { controller: "comment-form" }) do |form| %>
+      
+      <% if comment.errors.any? %>
+        <div id="comment-errors" class="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-md">
+          <div class="flex">
+            <svg class="w-5 h-5 text-red-400 mr-2 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clip-rule="evenodd"></path>
+            </svg>
+            <div class="flex-1">
+              <ul class="list-disc ml-4 text-sm">
+                <% comment.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <!-- User Info -->
+      <div class="flex items-center space-x-3 pb-3 border-b border-gray-100">
+        <div class="w-10 h-10 rounded-full overflow-hidden bg-gray-300 flex items-center justify-center">
+          <% if current_user.avatar.attached? %>
+            <%= image_tag current_user.avatar_thumbnail(80), alt: "#{current_user.display_name}のアバター", class: "w-full h-full object-cover" %>
+          <% else %>
+            <span class="text-sm font-bold text-gray-600"><%= current_user.display_name.first.upcase %></span>
+          <% end %>
+        </div>
+        <div>
+          <p class="font-medium text-gray-900"><%= current_user.display_name %></p>
+          <p class="text-sm text-gray-500">コメントを投稿</p>
+        </div>
+      </div>
+
+      <!-- Comment Input -->
+      <div class="space-y-2">
+        <%= form.label :body, "コメント", class: "sr-only" %>
+        <%= form.text_area :body, 
+            rows: 4, 
+            class: "w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 resize-none transition-colors", 
+            placeholder: "この投稿についてどう思いますか？",
+            data: { 
+              "comment-form-target": "textarea",
+              action: "input->comment-form#updateCounter"
+            } %>
+        
+        <!-- Character Counter -->
+        <div class="flex justify-between items-center text-sm text-gray-500">
+          <span>Ctrl+Enterで投稿</span>
+          <span data-comment-form-target="counter">0/500</span>
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="flex items-center justify-between">
+        <div class="flex items-center space-x-4">
+          <label class="flex items-center text-sm text-gray-600">
+            <input type="checkbox" class="rounded border-gray-300 text-blue-600 focus:ring-blue-500">
+            <span class="ml-2">返信通知を受け取る</span>
+          </label>
+        </div>
+        
+        <div class="flex items-center space-x-2">
+          <button type="button" 
+                  class="px-4 py-2 text-gray-600 hover:text-gray-800 transition-colors"
+                  onclick="this.closest('form').reset()">
+            キャンセル
+          </button>
+          <%= form.submit "コメントを投稿", 
+              class: "bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors disabled:opacity-50 disabled:cursor-not-allowed",
+              data: { 
+                "comment-form-target": "submit",
+                turbo_submits_with: "投稿中..."
+              } %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-6 mb-6 text-center border border-blue-200">
+    <div class="max-w-md mx-auto">
+      <svg class="w-12 h-12 text-blue-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+      </svg>
+      <h3 class="text-lg font-medium text-gray-900 mb-2">コメントに参加しませんか？</h3>
+      <p class="text-gray-600 mb-4">
+        ログインして、この投稿にコメントを残しましょう。
+      </p>
+      <div class="flex justify-center space-x-4">
+        <%= link_to "ログイン", new_user_session_path, 
+            class: "bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors" %>
+        <%= link_to "新規登録", new_user_registration_path, 
+            class: "bg-white text-blue-600 px-4 py-2 rounded-md border border-blue-600 hover:bg-blue-50 transition-colors" %>
+      </div>
+    </div>
+  </div>
+<% end %>

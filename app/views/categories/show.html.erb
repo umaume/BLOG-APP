@@ -1,0 +1,83 @@
+<% content_for :title, "#{@category.name}の記事" %>
+
+<div class="max-w-4xl mx-auto">
+  <div class="mb-8">
+    <nav class="mb-4">
+      <%= link_to "← カテゴリー一覧に戻る", categories_path, class: "text-blue-600 hover:text-blue-800" %>
+    </nav>
+    
+    <div class="flex items-center mb-4">
+      <div class="w-6 h-6 rounded-full mr-3" style="background-color: <%= @category.color %>"></div>
+      <h1 class="font-bold text-4xl text-gray-900"><%= @category.name %></h1>
+    </div>
+    
+    <% if @category.description.present? %>
+      <p class="text-gray-600 mb-4"><%= @category.description %></p>
+    <% end %>
+    
+    <p class="text-sm text-gray-500">
+      <%= @posts.count %>件の記事
+    </p>
+  </div>
+
+  <div class="space-y-6">
+    <% if @posts.any? %>
+      <% @posts.each do |post| %>
+        <article class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full overflow-hidden bg-gray-300 flex items-center justify-center">
+                <% if post.user.avatar.attached? %>
+                  <%= image_tag post.user.avatar_thumbnail(80), alt: "#{post.user.display_name}のアバター", class: "w-full h-full object-cover" %>
+                <% else %>
+                  <span class="text-sm font-bold text-gray-600"><%= post.user.display_name.first.upcase %></span>
+                <% end %>
+              </div>
+              <div>
+                <p class="font-medium text-gray-900"><%= link_to post.user.display_name, post.user, class: "hover:text-blue-600" %></p>
+                <p class="text-sm text-gray-500"><%= time_ago_in_japanese(post.created_at) %></p>
+              </div>
+            </div>
+          </div>
+          
+          <h2 class="text-xl font-bold mb-2">
+            <%= link_to post.title, post, class: "text-gray-900 hover:text-blue-600" %>
+          </h2>
+          
+          <!-- Tags -->
+          <% if post.tags.any? %>
+            <div class="mb-3 flex flex-wrap items-center gap-1">
+              <% post.tags.limit(3).each do |tag| %>
+                <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium text-white" style="background-color: <%= tag.color %>">
+                  #<%= tag.name %>
+                </span>
+              <% end %>
+              <% if post.tags.count > 3 %>
+                <span class="text-xs text-gray-500">+<%= post.tags.count - 3 %>個</span>
+              <% end %>
+            </div>
+          <% end %>
+          
+          <p class="text-gray-700 mb-4"><%= post.excerpt(200) %></p>
+          
+          <div class="flex items-center justify-between">
+            <div class="flex items-center space-x-4">
+              <%= render 'posts/like_button', post: post %>
+              <div class="flex items-center space-x-1 text-gray-500">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                </svg>
+                <span><%= post.comments.count %></span>
+              </div>
+            </div>
+            <%= link_to "続きを読む", post, class: "text-blue-600 hover:text-blue-800 font-medium" %>
+          </div>
+        </article>
+      <% end %>
+    <% else %>
+      <div class="text-center py-12 bg-white rounded-lg shadow-md">
+        <p class="text-gray-500 text-lg">このカテゴリーにはまだ記事がありません。</p>
+      </div>
+    <% end %>
+  </div>
+</div>

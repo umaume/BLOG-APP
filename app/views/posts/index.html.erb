@@ -1,29 +1,163 @@
-<% content_for :title, "Posts" %>
+<% content_for :title, t('posts.index.title') %>
+<% add_breadcrumb "ホーム", root_path %>
+<% add_breadcrumb "投稿一覧" %>
 
 <div class="w-full">
-  <% if notice.present? %>
-    <p class="py-2 px-3 bg-green-50 mb-5 text-green-500 font-medium rounded-md inline-block" id="notice"><%= notice %></p>
-  <% end %>
-
-  <div class="flex justify-between items-center">
-    <h1 class="font-bold text-4xl">Posts</h1>
-    <%= link_to "New post", new_post_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white block font-medium" %>
+  <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-6 sm:mb-8 space-y-4 sm:space-y-0">
+    <h1 class="font-bold text-2xl sm:text-3xl lg:text-4xl text-gray-900"><%= t('posts.index.title') %></h1>
+    <% if user_signed_in? %>
+      <%= link_to t('navigation.new_post'), new_post_path, class: "rounded-md px-3.5 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-center font-medium w-full sm:w-auto" %>
+    <% end %>
   </div>
 
-  <div id="posts" class="min-w-full divide-y divide-gray-200 space-y-5">
+  <!-- Search and Filter Section -->
+  <div class="bg-white rounded-lg shadow-md p-4 sm:p-6 mb-6 sm:mb-8">
+    <%= form_with url: posts_path, method: :get, local: true, class: "space-y-4" do |form| %>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <!-- Search Input -->
+        <div>
+          <%= form.text_field :search, placeholder: "キーワードで検索...", 
+                value: params[:search],
+                class: "w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" %>
+        </div>
+        
+        <!-- Category Filter -->
+        <div>
+          <%= form.collection_select :category_id, @categories, :id, :name,
+                { prompt: "カテゴリーで絞り込み", selected: params[:category_id] },
+                { class: "w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" } %>
+        </div>
+        
+        <!-- Tag Filter -->
+        <div>
+          <%= form.collection_select :tag_id, @popular_tags, :id, :name,
+                { prompt: "タグで絞り込み", selected: params[:tag_id] },
+                { class: "w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-blue-500 focus:border-blue-500" } %>
+        </div>
+      </div>
+      
+      <div class="flex justify-between items-center">
+        <div class="flex space-x-2">
+          <%= form.submit "検索", class: "px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700" %>
+          <%= link_to "リセット", posts_path, class: "px-4 py-2 bg-gray-300 text-gray-700 rounded-md hover:bg-gray-400" %>
+        </div>
+        
+        <% if params[:search].present? || params[:category_id].present? || params[:tag_id].present? %>
+          <div class="text-sm text-gray-600">
+            <% if params[:search].present? %>
+              「<span class="font-medium"><%= params[:search] %></span>」で検索
+            <% end %>
+            <% if params[:category_id].present? && @categories.find_by(id: params[:category_id]) %>
+              <span class="ml-2 px-2 py-1 bg-blue-100 text-blue-800 rounded-full text-xs">
+                <%= @categories.find_by(id: params[:category_id]).name %>
+              </span>
+            <% end %>
+            <% if params[:tag_id].present? && @popular_tags.find_by(id: params[:tag_id]) %>
+              <span class="ml-2 px-2 py-1 bg-green-100 text-green-800 rounded-full text-xs">
+                #<%= @popular_tags.find_by(id: params[:tag_id]).name %>
+              </span>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+  <div id="posts" class="space-y-6">
     <% if @posts.any? %>
       <% @posts.each do |post| %>
-        <div class="flex flex-col sm:flex-row justify-between items-center pb-5 sm:pb-0">
-          <%= render post %>
-          <div class="w-full sm:w-auto flex flex-col sm:flex-row space-x-2 space-y-2">
-            <%= link_to "Show", post, class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-            <%= link_to "Edit", edit_post_path(post), class: "w-full sm:w-auto text-center rounded-md px-3.5 py-2.5 bg-gray-100 hover:bg-gray-50 inline-block font-medium" %>
-            <%= button_to "Destroy", post, method: :delete, class: "w-full sm:w-auto rounded-md px-3.5 py-2.5 text-white bg-red-600 hover:bg-red-500 font-medium cursor-pointer", data: { turbo_confirm: "Are you sure?" } %>
+        <article class="bg-white rounded-lg shadow-md p-4 sm:p-6 hover:shadow-lg transition-shadow">
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-4 space-y-3 sm:space-y-0">
+            <div class="flex items-center space-x-3">
+              <div class="w-10 h-10 rounded-full overflow-hidden bg-gray-300 flex items-center justify-center flex-shrink-0">
+                <% if post.user.avatar.attached? %>
+                  <%= image_tag post.user.avatar_thumbnail(80), alt: "#{post.user.display_name}のアバター", class: "w-full h-full object-cover" %>
+                <% else %>
+                  <span class="text-sm font-bold text-gray-600"><%= post.user.display_name.first.upcase %></span>
+                <% end %>
+              </div>
+              <div class="min-w-0 flex-1">
+                <p class="font-medium text-gray-900 truncate"><%= link_to post.user.display_name, post.user, class: "hover:text-blue-600" %></p>
+                <p class="text-sm text-gray-500"><%= time_ago_in_japanese(post.created_at) %></p>
+              </div>
+            </div>
+            <% if user_signed_in? && post.user == current_user %>
+              <div class="flex space-x-2 self-start sm:self-center">
+                <%= link_to t('actions.edit'), edit_post_path(post), class: "text-sm text-gray-600 hover:text-blue-600 px-2 py-1 rounded" %>
+                <%= button_to t('actions.delete'), post, method: :delete, class: "text-sm text-red-600 hover:text-red-800 px-2 py-1 rounded", data: { turbo_confirm: t('posts.actions.confirm_delete') } %>
+              </div>
+            <% elsif user_signed_in? %>
+              <div class="self-start sm:self-center">
+                <%= render 'shared/follow_button', user: post.user %>
+              </div>
+            <% end %>
           </div>
-        </div>
+          
+          <h2 class="text-lg sm:text-xl font-bold mb-2 leading-tight">
+            <%= link_to post, class: "text-gray-900 hover:text-blue-600 break-words" do %>
+              <% if params[:search].present? %>
+                <%= highlight_search_terms(post.title, params[:search]) %>
+              <% else %>
+                <%= post.title %>
+              <% end %>
+            <% end %>
+          </h2>
+          
+          <!-- Category and Tags -->
+          <% if post.category || post.tags.any? %>
+            <div class="mb-3 flex flex-wrap items-center gap-1 sm:gap-2">
+              <% if post.category %>
+                <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium text-white" style="background-color: <%= post.category.color %>">
+                  <%= post.category.name %>
+                </span>
+              <% end %>
+              
+              <% if post.tags.any? %>
+                <% post.tags.limit(3).each do |tag| %>
+                  <span class="inline-flex items-center px-2 py-1 rounded-md text-xs font-medium text-white" style="background-color: <%= tag.color %>">
+                    #<%= tag.name %>
+                  </span>
+                <% end %>
+                <% if post.tags.count > 3 %>
+                  <span class="text-xs text-gray-500">+<%= post.tags.count - 3 %>個</span>
+                <% end %>
+              <% end %>
+            </div>
+          <% end %>
+          
+          <p class="text-gray-700 mb-4 text-sm sm:text-base leading-relaxed">
+            <% if params[:search].present? %>
+              <%= truncate_with_highlight(post.content, 150, params[:search]) %>
+            <% else %>
+              <%= post.excerpt(150) %>
+            <% end %>
+          </p>
+          
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between space-y-3 sm:space-y-0">
+            <div class="flex items-center space-x-4">
+              <%= render 'like_button', post: post %>
+              <div class="flex items-center space-x-1 text-gray-500">
+                <svg class="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
+                </svg>
+                <span class="text-sm"><%= post.comments.count %></span>
+              </div>
+            </div>
+            <%= link_to t('posts.show.read_more'), post, class: "text-blue-600 hover:text-blue-800 font-medium text-sm sm:text-base self-start sm:self-center" %>
+          </div>
+        </article>
       <% end %>
+
+
     <% else %>
-      <p class="text-center my-10">No posts found.</p>
+      <div class="text-center py-12">
+        <p class="text-gray-500 text-lg"><%= t('posts.index.no_posts') %></p>
+        <% if user_signed_in? %>
+          <p class="mt-4">
+            <%= link_to t('posts.index.write_first'), new_post_path, class: "text-blue-600 hover:text-blue-800 font-medium" %>
+          </p>
+        <% end %>
+      </div>
     <% end %>
   </div>
 </div>

@@ -1,0 +1,9 @@
+<%= turbo_stream.replace "like-button-#{@post.id}" do %>
+  <%= render partial: 'posts/like_button', locals: { post: @post } %>
+<% end %>
+
+<%= turbo_stream.replace "like-count-#{@post.id}" do %>
+  <span id="like-count-<%= @post.id %>" class="text-sm">
+    <%= @post.likes.count %>
+  </span>
+<% end %>

@@ -1,0 +1,99 @@
+# RuboCop configuration for Ruby on Rails
+# This configuration extends the omakase setup with project-specific adjustments
+
+plugins:
+  - rubocop-rails
+
+inherit_gem:
+  rubocop-rails-omakase: rubocop.yml
+
+AllCops:
+  TargetRubyVersion: 3.4
+  NewCops: enable
+  Exclude:
+    - 'db/schema.rb'
+    - 'db/migrate/*'
+    - 'bin/*'
+    - 'config/**/*'
+    - 'vendor/**/*'
+    - 'node_modules/**/*'
+    - 'tmp/**/*'
+    - 'log/**/*'
+    - 'public/**/*'
+    - 'storage/**/*'
+
+# Rails-specific configurations
+Rails:
+  Enabled: true
+
+# Allow longer lines in certain cases
+Layout/LineLength:
+  Max: 120
+  Exclude:
+    - 'spec/**/*'
+    - 'config/routes.rb'
+
+# Specs are excluded from most style checks
+# RSpec cops are managed separately if rubocop-rspec is installed
+
+# Documentation requirements
+Style/Documentation:
+  Enabled: false
+
+# Prefer single quotes
+Style/StringLiterals:
+  EnforcedStyle: single_quotes
+
+# Allow compact module/class definitions
+Style/ClassAndModuleChildren:
+  EnforcedStyle: compact
+
+# Allow trailing commas in arrays/hashes
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: comma
+
+# Allow semantic predicate method names
+Naming/PredicatePrefix:
+  Exclude:
+    - 'app/models/**/*'
+
+# Allow longer parameter lists in some cases
+Metrics/ParameterLists:
+  Max: 6
+
+# Allow longer methods in controllers and models
+Metrics/MethodLength:
+  Max: 15
+  Exclude:
+    - 'app/controllers/**/*'
+    - 'db/seeds.rb'
+
+# Allow larger classes
+Metrics/ClassLength:
+  Max: 150
+  Exclude:
+    - 'spec/**/*'
+    - 'app/controllers/**/*'
+
+# Allow complex methods in controllers
+Metrics/AbcSize:
+  Max: 20
+  Exclude:
+    - 'app/controllers/**/*'
+    - 'db/seeds.rb'
+
+# Security and Rails-specific rules
+Rails/OutputSafety:
+  Enabled: true
+
+Rails/SkipsModelValidations:
+  Enabled: true
+
+Security/Open:
+  Enabled: true
+
+Security/YAMLLoad:
+  Enabled: true

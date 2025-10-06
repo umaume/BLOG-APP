@@ -121,3 +121,74 @@ URLのプレビュー機能やブラウザ通知機能により、よりイン�
 - **通知機能**: Web Push API + Service Worker
 - **全文検索**: PostgreSQL Full Text Search
 - **PWA化**: Workbox + Rails PWA gem
+
+## デプロイメント手順
+
+### Renderでのデプロイ
+
+1. **GitHubリポジトリの準備**
+   ```bash
+   git add .
+   git commit -m "Setup deployment configuration"
+   git push origin main
+   ```
+
+2. **Renderでの設定**
+   - Renderダッシュボードで新しいWebサービスを作成
+   - GitHubリポジトリを接続
+   - 以下の設定を行う：
+     - **Build Command**: `./bin/render-build.sh`
+     - **Start Command**: `bundle exec puma -C config/puma.rb`
+     - **Environment**: `production`
+
+3. **環境変数の設定**
+   以下の環境変数をRenderダッシュボードで設定してください：
+   ```
+   RAILS_ENV=production
+   SECRET_KEY_BASE=your_secret_key_here
+   DATABASE_URL=postgresql_url_from_render
+   RAILS_SERVE_STATIC_FILES=true
+   RAILS_LOG_TO_STDOUT=true
+   ```
+
+4. **データベースの設定**
+   - RenderでPostgreSQLデータベースを作成
+   - DATABASE_URLを環境変数に設定
+
+### ローカルでの開発環境セットアップ
+
+1. **リポジトリのクローン**
+   ```bash
+   git clone <repository-url>
+   cd blog-app
+   ```
+
+2. **依存関係のインストール**
+   ```bash
+   bundle install
+   ```
+
+3. **データベースの設定**
+   ```bash
+   rails db:create
+   rails db:migrate
+   rails db:seed
+   ```
+
+4. **サーバーの起動**
+   ```bash
+   rails server
+   ```
+
+### テスト環境
+
+```bash
+# テストの実行
+rails test
+
+# RuboCopによるコード品質チェック
+bundle exec rubocop
+
+# Brakemanによるセキュリティチェック
+bundle exec brakeman
+```

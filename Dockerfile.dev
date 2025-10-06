@@ -1,0 +1,40 @@
+# 開発環境用のDockerfile
+FROM ruby:3.4.5-slim
+
+# 必要なパッケージをインストール
+RUN apt-get update -qq && \
+    apt-get install --no-install-recommends -y \
+    build-essential \
+    curl \
+    git \
+    libvips \
+    sqlite3 \
+    nodejs \
+    npm \
+    libyaml-dev \
+    pkg-config \
+    && rm -rf /var/lib/apt/lists /var/cache/apt/archives
+
+# アプリケーションディレクトリ
+WORKDIR /rails
+
+# 開発環境用の環境変数
+ENV RAILS_ENV="development" \
+    BUNDLE_PATH="/usr/local/bundle" \
+    PATH="/rails/bin:$PATH"
+
+# Gemfileをコピーしてbundle install
+COPY Gemfile Gemfile.lock ./
+RUN bundle install
+
+# アプリケーションコードをコピー
+COPY . .
+
+# binディレクトリに実行権限を付与
+RUN chmod +x bin/*
+
+# ポート3000を開放
+EXPOSE 3000
+
+# デフォルトコマンド
+CMD ["bin/rails", "server", "-b", "0.0.0.0"]

@@ -1,0 +1,50 @@
+<div class="text-center py-12">
+  <div class="max-w-md mx-auto">
+    <!-- Empty State Icon -->
+    <div class="w-24 h-24 mx-auto mb-6 text-gray-300">
+      <% if local_assigns[:icon] == 'search' %>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-full h-full">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+      <% elsif local_assigns[:icon] == 'posts' %>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-full h-full">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+        </svg>
+      <% elsif local_assigns[:icon] == 'users' %>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-full h-full">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+        </svg>
+      <% else %>
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" class="w-full h-full">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M20 13V6a2 2 0 00-2-2H6a2 2 0 00-2 2v7m16 0v5a2 2 0 01-2 2H6a2 2 0 01-2-2v-5m16 0h-2.586a1 1 0 00-.707.293l-2.414 2.414a1 1 0 01-.707.293h-3.172a1 1 0 01-.707-.293l-2.414-2.414A1 1 0 006.586 13H4"></path>
+        </svg>
+      <% end %>
+    </div>
+    
+    <!-- Empty State Title -->
+    <h3 class="text-xl font-medium text-gray-900 mb-2">
+      <%= local_assigns[:title] || "データがありません" %>
+    </h3>
+    
+    <!-- Empty State Description -->
+    <p class="text-gray-600 mb-6 leading-relaxed">
+      <%= local_assigns[:description] || "まだ何も投稿されていません。最初の投稿を作成してみましょう。" %>
+    </p>
+    
+    <!-- Empty State Action -->
+    <% if local_assigns[:action_text] && local_assigns[:action_path] %>
+      <%= link_to local_assigns[:action_text], local_assigns[:action_path], 
+          class: "inline-flex items-center px-4 py-2 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors duration-200" %>
+    <% end %>
+    
+    <!-- Secondary Actions -->
+    <% if local_assigns[:secondary_actions] %>
+      <div class="mt-4 space-x-4">
+        <% local_assigns[:secondary_actions].each do |action| %>
+          <%= link_to action[:text], action[:path], 
+              class: "text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200" %>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+</div>
